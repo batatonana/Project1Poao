@@ -1,4 +1,4 @@
-package Empresas;
+
 public class Fast_Food extends Restaurante{
     private double clientesDrive;
     private double faturacaoDrive;

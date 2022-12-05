@@ -4,13 +4,6 @@
 
 import java.util.ArrayList;
 
-import Empresas.Cafe;
-import Empresas.Empresa;
-import Empresas.Frutaria;
-import Empresas.Local;
-import Empresas.Pastelaria;
-import GUI.LandingPage;
-
 public class StarThrive {
     private ArrayList<Empresa> empresas = new ArrayList<Empresa>();
 

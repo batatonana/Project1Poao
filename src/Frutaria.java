@@ -1,4 +1,4 @@
-package Empresas;
+
 public class Frutaria extends Mercearia{
     int produtos;
     double faturacaoProduto;

@@ -1,4 +1,4 @@
-package Empresas;
+
 /**
  * Superclass for all the companies managed by StarThrive
  */

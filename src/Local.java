@@ -1,4 +1,4 @@
-package Empresas;
+
 public class Local extends Restaurante{
     private int mesasEsp;
     private double licencaEsp;

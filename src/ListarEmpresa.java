@@ -1,4 +1,4 @@
-package GUI;
+
 import javax.swing.*;
 
 import java.awt.*;
@@ -50,7 +50,6 @@ public class ListarEmpresa extends JFrame {
         JPanel panel = new JPanel();
         panel.setLayout(null);
         panel.add(labelName);
-        panel.add(lista);
         panel.add(voltar);
 
         return panel;
