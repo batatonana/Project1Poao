@@ -1,3 +1,4 @@
+package Empresas;
 public abstract class Mercearia extends Empresa {
     protected double custoLimpeza;
 

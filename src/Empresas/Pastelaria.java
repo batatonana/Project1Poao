@@ -1,3 +1,4 @@
+package Empresas;
 public class Pastelaria extends Restauracao{
     private double boloVendidoDia;
     private double faturacaoAnualBolo;

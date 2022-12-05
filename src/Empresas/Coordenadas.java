@@ -1,3 +1,4 @@
+package Empresas;
 public class Coordenadas {
     private double latitude;
     private double longitude;

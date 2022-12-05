@@ -1,3 +1,4 @@
+package Empresas;
 public class Restaurante extends Restauracao {
     protected int diasEmFuncionamento;
     protected int mesasInt;

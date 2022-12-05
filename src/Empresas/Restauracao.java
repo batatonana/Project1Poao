@@ -1,3 +1,4 @@
+package Empresas;
 /**
  * Superclass for all the companies restaurante-like
  * This class is a subclass of the class "Empresa"

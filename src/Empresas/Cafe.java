@@ -1,3 +1,4 @@
+package Empresas;
 public class Cafe extends Restauracao {
     private double cafeVendidoDia;
     private double faturacaoAnualCafe;
