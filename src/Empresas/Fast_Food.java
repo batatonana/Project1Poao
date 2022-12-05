@@ -38,6 +38,6 @@ public class Fast_Food extends Restaurante{
 
     @Override
     public String toString() {
-        return "Tipo: Restaurante Local\n" + super.toString() + "Numero medio de clientes Drive-thru: " + clientesDrive + "\nFaturacao media por cliente do Drive-thru: "  + faturacaoDrive + "\n";
+        return "Tipo: Restaurante Fast-Food\n" + super.toString() + "Numero medio de clientes Drive-thru: " + clientesDrive + "\nFaturacao media por cliente do Drive-thru: "  + faturacaoDrive + "\n";
     }
 }

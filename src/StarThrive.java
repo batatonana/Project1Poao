@@ -82,14 +82,6 @@ public class StarThrive {
 
         empresa = new Frutaria("McDonal23", -10, -10, "Sitio", 10, 10, 20);
         manager.add(empresa);
-        empresa = new Local("McDonal20", -19, -10, "Coimbra", 10, 10, 40, 300, 10, -1, 10, 10);
-        manager.add(empresa);
-        empresa = new Local("McDonal21", -19, -10, "Coimbra", 10, 10, 40, 300, -1, 10, 10, 10);
-        manager.add(empresa);
-        empresa = new Local("McDonal22", -19, -10, "Coimbra", 10, 10, 40, -1, 10, 10, 10, 10);
-        manager.add(empresa);
-        empresa = new Local("McDonal19", -19, -10, "Coimbra", 10, 10, 40, 300, 10, 10, -1, 10);
-        manager.add(empresa);
 
 
         manager.print();
