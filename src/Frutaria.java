@@ -1,7 +1,7 @@
 
 public class Frutaria extends Mercearia{
-    int produtos;
-    double faturacaoProduto;
+    private int produtos;
+    private double faturacaoProduto;
 
     public Frutaria(String name, double latitude, double longitude, String distrito, double custoLimpeza, int produtos, double faturacaoProduto){
         super(name, latitude, longitude, distrito, custoLimpeza);
