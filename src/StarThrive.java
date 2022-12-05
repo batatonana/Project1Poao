@@ -21,6 +21,7 @@ public class StarThrive {
         }
     }
     public static void main(String[] args) {
+        new LandingPage();
         StarThrive manager = new StarThrive();
 
         Empresa empresa = new Cafe("McDonal", -10, -10, "Leiria", 10, 12000, 1200, 4000, 400);
