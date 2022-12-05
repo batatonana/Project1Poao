@@ -37,6 +37,6 @@ public class Frutaria extends Mercearia{
 
     @Override
     public String toString() {
-        return super.toString();
+        return super.toString() + "Media de produtos vendidos por ano: " + produtos + "\nFaturacao media anual por porduto vendido: " + faturacaoProduto + "\n";
     }
 }

@@ -4,9 +4,6 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
-import java.io.*;
-import java.util.ArrayList;
-
 public class LandingPage extends  JFrame implements ActionListener{
 
     private JFrame frame;

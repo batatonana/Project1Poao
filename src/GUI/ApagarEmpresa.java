@@ -9,7 +9,7 @@ public class ApagarEmpresa extends JFrame{
 
     private JFrame frame;
     private JButton submeter, voltar;
-    private JPanel panelA, panelB;
+    private JPanel panelA;
     private JTextField nome;
 
     private Font fonte = new Font("Arial", Font.BOLD, 25);

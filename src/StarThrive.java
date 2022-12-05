@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 import Empresas.Cafe;
 import Empresas.Empresa;
+import Empresas.Frutaria;
 import Empresas.Local;
 import Empresas.Pastelaria;
 import GUI.LandingPage;
@@ -69,6 +70,17 @@ public class StarThrive {
         manager.add(empresa);
 
         empresa = new Local("McDonal19", -19, -10, "Coimbra", 10, 10, 40, 300, 10, 10, 10, 10);
+        manager.add(empresa);
+        empresa = new Local("McDonal20", -19, -10, "Coimbra", 10, 10, 40, 300, 10, -1, 10, 10);
+        manager.add(empresa);
+        empresa = new Local("McDonal21", -19, -10, "Coimbra", 10, 10, 40, 300, -1, 10, 10, 10);
+        manager.add(empresa);
+        empresa = new Local("McDonal22", -19, -10, "Coimbra", 10, 10, 40, -1, 10, 10, 10, 10);
+        manager.add(empresa);
+        empresa = new Local("McDonal19", -19, -10, "Coimbra", 10, 10, 40, 300, 10, 10, -1, 10);
+        manager.add(empresa);
+
+        empresa = new Frutaria("McDonal23", -10, -10, "Sitio", 10, 10, 20);
         manager.add(empresa);
         empresa = new Local("McDonal20", -19, -10, "Coimbra", 10, 10, 40, 300, 10, -1, 10, 10);
         manager.add(empresa);

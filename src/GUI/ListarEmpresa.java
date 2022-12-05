@@ -8,10 +8,9 @@ import java.awt.event.ActionListener;
 public class ListarEmpresa extends JFrame {
 
     private JFrame frame;
-    private JPanel panelA, panelB;
+    private JPanel panelA;
     private JButton  voltar;
     private Font fonte = new Font("Arial", Font.BOLD, 25);
-    private Font fonte1 = new Font("Arial", Font.BOLD, 20);
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
 
@@ -35,10 +34,6 @@ public class ListarEmpresa extends JFrame {
 
         JLabel labelName = new JLabel("Lista de empresas");
         labelName.setBounds(400-25, 0, 250,100);
-        labelName.setFont(fonte);
-
-        JList lista = new JList();
-        lista.setBounds(150, 150, 700,500);
         labelName.setFont(fonte);
 
         voltar = new JButton();
