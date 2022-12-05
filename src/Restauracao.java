@@ -20,6 +20,10 @@ public abstract class Restauracao extends Empresa {
         return empregados * salarioMedioAnual;
     }
 
+    @Override
+    public double capacidadeClientes() {
+        return clientesMedioDiario;
+    }
 
     public void setSalarioMedioAnual(double salarioMedioAnual) {
         if(salarioMedioAnual < 0){

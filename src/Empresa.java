@@ -1,24 +1,34 @@
+import java.io.Serializable;
 
 /**
  * Superclass for all the companies managed by StarThrive
  */
-public abstract class Empresa {
+public abstract class Empresa implements Serializable {
+
+    protected int id;
     protected Coordenadas coordenadas;
     protected boolean valid = true;
     protected String name;
     protected String distrito;
+    /**
+     * Variable to store the number of "empresas" created 
+     */
+    static private int created = 0;
 
-    
     public Empresa(String name, double latitude, double longitude, String distrito){
+        id = created;
+        created += 1;
         setName(name);
         setDistrito(distrito);
         setCoordenadas(latitude, longitude);
     }
 
-
     public abstract double despesaAnual();
     public abstract double receitaAnual();
 
+    public double capacidadeClientes(){
+        return -1;
+    }
 
     public double lucroAnual(){
         return (receitaAnual() - despesaAnual());
@@ -64,7 +74,7 @@ public abstract class Empresa {
     
 
     public String toString() {
-        return "Nome: " + name + "\nDistrito: " + distrito + "\n" + coordenadas + "Despesa Anual: " + despesaAnual() + "\nReceita Anual: " + receitaAnual() + "\nLucro: " + ((lucroAnual()>0) ? "Sim\n" : "Nao\n");
+        return "ID: " + id + "\nNome: " + name + "\nDistrito: " + distrito + "\n" + coordenadas + "Despesa Anual: " + despesaAnual() + "\nReceita Anual: " + receitaAnual() + "\nLucro: " + ((lucroAnual()>0) ? "Sim\n" : "Nao\n");
     }
 
 }

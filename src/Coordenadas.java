@@ -1,5 +1,6 @@
+import java.io.Serializable;
 
-public class Coordenadas {
+public class Coordenadas implements Serializable{
     private double latitude;
     private double longitude;
     private boolean valid = true;

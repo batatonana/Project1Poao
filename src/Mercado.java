@@ -5,7 +5,7 @@ public class Mercado extends Mercearia{
 
     public Mercado(String name, double latitude, double longitude, String distrito, double custoLimpeza, String tipo, double area, double faturacaoArea){
         super(name, latitude, longitude, distrito, custoLimpeza);
-        setArea(faturacaoArea);
+        setArea(area);
         setTipo(tipo);
         setFaturacaoArea(faturacaoArea);
     }
@@ -16,10 +16,10 @@ public class Mercado extends Mercearia{
     }
 
     public void setTipo(String tipo) {
-        if(tipo.toLowerCase() != "mini" || tipo.toLowerCase() != "super" || tipo.toLowerCase() != "hiper"){
-            setValid(false);
+        if(tipo == "Mini" || tipo == "Super" || tipo == "Hiper"){
+            this.tipo = tipo;
         }else{
-        this.tipo = tipo;
+            setValid(false);
         }
     }
     public void setArea(double area) {
@@ -49,7 +49,7 @@ public class Mercado extends Mercearia{
 
     @Override
     public String toString() {
-        return "Tipo: Mercado" + super.toString() + "Tipo: " + tipo + "mercado\nArea: " + area + "\nFaturacao por metro quadrado: " + faturacaoArea + "\n";
+        return "Tipo: Mercado\n" + super.toString() + "Tipo: " + tipo + "mercado\nArea: " + area + "\nFaturacao por metro quadrado: " + faturacaoArea + "\n";
     }
 
 }
