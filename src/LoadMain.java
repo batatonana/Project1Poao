@@ -13,6 +13,7 @@ public class LoadMain extends JFrame{
     private Font fonte = new Font("Arial", Font.BOLD, 25);
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
+    private Empresa empresa;
 
     public LoadMain() {
         frame = new JFrame();
@@ -98,7 +99,7 @@ public class LoadMain extends JFrame{
                 case "Adicionar empresa":
                     frame.setVisible(false);
                     frame.dispose();
-                    new AddEmpresa();
+                    new AddEmpresa(empresa);
                     break;
                 case "Editar empresa":
                     JOptionPane.showMessageDialog(null, "Editar empresa");
