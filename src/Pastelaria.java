@@ -19,6 +19,12 @@ public class Pastelaria extends Restauracao{
         return 1;
     }
 
+    @Override
+    public String[] toTable() {
+        String[] data = {name, "Pastelaria", distrito, String.format("%.2f", despesaAnual()), String.format("%.2f", receitaAnual()),(lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", lucroAnual())};
+        return data;
+    }
+
     public void setFaturacaoAnualBolo(double faturacaoAnualBolo) {
         if(faturacaoAnualBolo < 0){
             setValid(false);

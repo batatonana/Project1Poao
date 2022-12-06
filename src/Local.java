@@ -24,6 +24,12 @@ public class Local extends Restaurante{
         return super.receitaAnual() + mesasEsp*diasEmFuncionamento*faturacaoMesa;
     }
 
+    @Override
+    public String[] toTable() {
+        String[] data = {name, "Restaurante Local", distrito, String.format("%.2f", despesaAnual()), String.format("%.2f", receitaAnual()),(lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", lucroAnual())};
+        return data;
+    }
+
     public void setMesasEsp(int mesasEsp) {
         if(mesasEsp < 0){
             setValid(false);

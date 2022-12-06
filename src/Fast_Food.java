@@ -19,6 +19,12 @@ public class Fast_Food extends Restaurante{
         return super.receitaAnual() + diasEmFuncionamento*clientesDrive*faturacaoDrive;
     }
 
+    @Override
+    public String[] toTable() {
+        String[] data = {name, "Restaurante fast-food", distrito, String.format("%.2f", despesaAnual()), String.format("%.2f", receitaAnual()),(lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", lucroAnual())};
+        return data;
+    }
+
     public void setClientesDrive(double clientesDrive) {
         if (clientesDrive < 0){
             setValid(false);

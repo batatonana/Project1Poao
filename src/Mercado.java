@@ -20,6 +20,11 @@ public class Mercado extends Mercearia{
         return 5;
     }
 
+    @Override
+    public String[] toTable() {
+        String[] data = {name, type + "mercado", distrito, String.format("%.2f", despesaAnual()), String.format("%.2f", receitaAnual()),(lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", lucroAnual())};
+        return data;
+    }
 
     public void setType(String type) {
         if(type.equals("Mini") || type.equals("Super") || type.equals("Hiper")){

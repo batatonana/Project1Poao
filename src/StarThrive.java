@@ -12,6 +12,16 @@ public class StarThrive implements Serializable{
         readObjFile();
     }
 
+    public int delete(int index){
+        try {
+            empresas.remove(index);
+        } catch (Exception e) {
+            System.out.println("Unable to delete empresa");
+            return -1;
+        }
+        return 0;
+    }
+
     /**
      * Function to add "Empresas" to the array list
      * @param empresa
@@ -26,23 +36,16 @@ public class StarThrive implements Serializable{
 
     public String[][] data(){
         String[][] data = new String[empresas.size()][6];
-        String[] tipos = {"Cafe", "Pastelaria", "Restaurante local", "Restaurante fast-food", "Frutaria", "Mercado"};
-        int index = 0;
+        int i = 0;
         for (Empresa empresa : empresas) {
-            data[index][0] = empresa.getName();
-            data[index][1] = tipos[empresa.getTipo()];
-            data[index][2] = empresa.getDistrito();
-            data[index][3] = String.format("%.2f",  empresa.despesaAnual());
-            data[index][4] = String.format("%.2f", empresa.receitaAnual());
-            data[index][5] = (empresa.lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", empresa.lucroAnual());
-            index += 1;
+            data[i] = empresa.toTable();
+            i += 1;
         }
         return data;
     }
 
     public String[][] clientes(){
         String data[][] = new String[2][7];
-        String[] tipos = {"Cafe", "Pastelaria", "Restaurante local", "Restaurante fast-food", "Frutaria", "Mercado"};
         Empresa maior = empresas.get(0);
         Empresa maior2 = empresas.get(1);
         for (Empresa e : empresas) {
@@ -52,21 +55,21 @@ public class StarThrive implements Serializable{
             }
         }
         if(maior.capacidadeClientes() >= 0){
-            data[0][0] = maior.getName();
-            data[0][1] = tipos[maior.getTipo()];
-            data[0][2] = maior.getDistrito();
-            data[0][3] = String.format("%.2f",  maior.capacidadeClientes());
-            data[0][4] = String.format("%.2f",  maior.despesaAnual());
-            data[0][5] = String.format("%.2f",  maior.receitaAnual());
-            data[0][6] = (maior.lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", maior.lucroAnual());
+            data[0][0] = maior.toTable()[0];
+            data[0][1] = maior.toTable()[1];
+            data[0][2] = maior.toTable()[2];
+            data[0][3] = String.format("%.2f", maior.capacidadeClientes());
+            data[0][4] = maior.toTable()[3];
+            data[0][5] = maior.toTable()[4];
+            data[0][6] = maior.toTable()[5];
             if(maior2.capacidadeClientes() >= 0){
-                data[1][0] = maior2.getName();
-                data[1][1] = tipos[maior2.getTipo()];
-                data[1][2] = maior2.getDistrito();
-                data[1][3] = String.format("%.2f",  maior2.capacidadeClientes());
-                data[1][4] = String.format("%.2f",  maior2.despesaAnual());
-                data[1][5] = String.format("%.2f",  maior2.receitaAnual());
-                data[1][6] = (maior2.lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", maior2.lucroAnual());
+                data[1][0] = maior2.toTable()[0];
+                data[1][1] = maior2.toTable()[1];
+                data[1][2] = maior2.toTable()[2];
+                data[1][3] = String.format("%.2f", maior2.capacidadeClientes());
+                data[1][4] = maior2.toTable()[3];
+                data[1][5] = maior2.toTable()[4];
+                data[1][6] = maior2.toTable()[5];
             }
         }
         return data;
@@ -135,7 +138,6 @@ public class StarThrive implements Serializable{
     /**
      * Function to read data from o .txt file
      */
-    // ! check visisbility
     private void readFile() {
         File f = new File("Empresas.txt");
         try {

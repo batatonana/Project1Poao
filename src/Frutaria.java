@@ -18,6 +18,12 @@ public class Frutaria extends Mercearia{
         return 4;
     }
 
+    @Override
+    public String[] toTable() {
+        String[] data = {name, "Furtaria", distrito, String.format("%.2f", despesaAnual()), String.format("%.2f", receitaAnual()),(lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", lucroAnual())};
+        return data;
+    }
+
     public void setFaturacaoProduto(double faturacaoProduto) {
         if (faturacaoProduto < 0){
             setValid(false);

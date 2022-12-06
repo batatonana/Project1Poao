@@ -19,6 +19,12 @@ public class Cafe extends Restauracao {
         return faturacaoAnualCafe * cafeVendidoDia;
     }
 
+    @Override
+    public String[] toTable() {
+        String[] data = {name, "Cafe", distrito, String.format("%.2f", despesaAnual()), String.format("%.2f", receitaAnual()),(lucroAnual() >= 0 ? "Lucro de " : "Prejuizo de ") + String.format("%.2f", lucroAnual())};
+        return data;
+    }
+
     public void setCafeVendidoDia(double cafeVendidoDia) {
         if(cafeVendidoDia < 0){
             setValid(false);

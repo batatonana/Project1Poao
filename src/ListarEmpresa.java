@@ -9,7 +9,7 @@ import java.awt.event.ActionListener;
 public class ListarEmpresa extends JFrame {
 
     private JFrame frame;
-    private JPanel panelA, panelB, panelC;
+    private JPanel panelA, panelB;
     private JButton voltar, submit;
     private Font fonte = new Font("Arial", Font.BOLD, 30);
     private JComboBox dropdown;
@@ -21,6 +21,7 @@ public class ListarEmpresa extends JFrame {
     private StarThrive manager = new StarThrive();
 
     public ListarEmpresa() {
+        System.out.println("HEYYYYYYYYYYY");
         // Set frame Dimensions
         frame = new JFrame();
         frame.setTitle("Aula 01");
@@ -41,8 +42,8 @@ public class ListarEmpresa extends JFrame {
         submit.setBackground(bgColor);
         submit.addActionListener(new ButtonListener());
 
-        String country[] = { "Listar todas empresas", "Listar maior lucro anual", "Listar maior receita anual",
-                "Listar menor despesa anual", "Listar restaurantes com mais clientes" };
+        String country[] = { "Todas as empresas", "Empresas com maior lucro anual", "Empresas com maior receita anual",
+                "Empresas com menor despesa anual", "Restaurantes com mais clientes" };
         dropdown = new JComboBox(country);
         panelB = new JPanel();
         panelB.setLayout(new GridLayout(1, 2));
@@ -76,6 +77,7 @@ public class ListarEmpresa extends JFrame {
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getTableHeader().setReorderingAllowed(false);
         sp = new JScrollPane(table);
         panelA.add(sp, BorderLayout.CENTER);
         frame.invalidate();
@@ -96,6 +98,7 @@ public class ListarEmpresa extends JFrame {
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getTableHeader().setReorderingAllowed(false);
         sp = new JScrollPane(table);
         panelA.add(sp, BorderLayout.CENTER);
         frame.invalidate();
@@ -116,6 +119,7 @@ public class ListarEmpresa extends JFrame {
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getTableHeader().setReorderingAllowed(false);
         sp = new JScrollPane(table);
         panelA.add(sp, BorderLayout.CENTER);
         frame.invalidate();
@@ -136,13 +140,13 @@ public class ListarEmpresa extends JFrame {
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getTableHeader().setReorderingAllowed(false);
         sp = new JScrollPane(table);
         panelA.add(sp, BorderLayout.CENTER);
         frame.invalidate();
         frame.validate();
         frame.repaint();
     }
-
     private void listarMaiorCliente() {
         String[][] data = manager.clientes();
         String[] columnNames = { "Nome", "Tipo", "Distrito", "Clientes", "Despesa Anual", "Receita Anual", "Lucro Anual" };
@@ -157,13 +161,13 @@ public class ListarEmpresa extends JFrame {
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+        table.getTableHeader().setReorderingAllowed(false);
         sp = new JScrollPane(table);
         panelA.add(sp, BorderLayout.CENTER);
         frame.invalidate();
         frame.validate();
         frame.repaint();
     }
-
     private class ButtonListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
