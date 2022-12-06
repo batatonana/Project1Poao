@@ -1,4 +1,6 @@
+
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -9,11 +11,15 @@ public class ApagarEmpresa extends JFrame{
     private JButton submeter, voltar;
     private JPanel panelA, panelB;
     private JTextField nome;
+    private JList lista;
+    private JScrollPane sp;
 
     private Font fonte = new Font("Arial", Font.BOLD, 25);
     private Font fonte1 = new Font("Arial", Font.BOLD, 20);
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
+
+    private StarThrive manager = new StarThrive();
 
     public ApagarEmpresa() {
         frame = new JFrame();
@@ -23,57 +29,67 @@ public class ApagarEmpresa extends JFrame{
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
-        panelA = drawPanel();
-        panelA.setVisible(true);
+        JLabel labelName = new JLabel("Apagar empresa", SwingConstants.CENTER);
+        labelName.setFont(fonte);
+
+        voltar = new JButton("Voltar");
+        voltar.setBounds(500, 700, 200, 40);
+        voltar.setFont(fonte);
+        voltar.setForeground(fgColor);
+        voltar.setBackground(bgColor);
+        voltar.addActionListener(new ButtonListener());
+
+        submeter = new JButton("Apagar");
+        submeter.setBounds(500, 700, 200, 40);
+        submeter.setFont(fonte);
+        submeter.setForeground(fgColor);
+        submeter.setBackground(bgColor);
+        submeter.addActionListener(new ButtonListener());
+
+        
+        String[] data = new String[manager.data().length];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = manager.data()[i][0];
+        }
+
+        lista = new JList(data);
+
+        sp = new JScrollPane(lista);
+        
+
+        panelB = new JPanel();
+        panelB.setLayout(new GridLayout(1, 2));
+        panelB.add(sp);
+        panelB.add(submeter);
+
+
+        panelA = new JPanel();
+        panelA.setLayout(new BorderLayout());
+        panelA.add(labelName, BorderLayout.NORTH);
+        panelA.add(voltar, BorderLayout.SOUTH);
+        panelA.add(panelB, BorderLayout.CENTER);
 
         frame.add(panelA);
-
         frame.setVisible(true);
     }
 
-    private JPanel drawPanel() {
-
-        JLabel labelName = new JLabel("Apagar empresa");
-        labelName.setBounds(400, 0, 200,100);
-        labelName.setFont(fonte);
-
-        JLabel labelName1 = new JLabel("empresa");
-        labelName1.setBounds(150, 200, 100,50);
-        labelName1.setFont(fonte1);
-
-        nome = new JTextField();
-        nome.setBounds (300, 200, 550,50);
-
-
-        submeter = new JButton();
-        submeter.setText("Submeter");
-        submeter.setBounds (750, 700, 200,40);
-        submeter.setFont(new Font("Arial", Font.BOLD, 30));
-        submeter.setForeground(fgColor);
-        submeter.setBackground(bgColor);
-
-        voltar = new JButton();
-        voltar.setText("Voltar");
-        voltar.setBounds (500, 700, 200,40);
-        voltar.setFont(new Font("Arial", Font.BOLD, 30));
-        voltar.setForeground(fgColor);
-        voltar.setBackground(bgColor);
-
-        submeter.addActionListener(new ButtonListener());
-        voltar.addActionListener(new ButtonListener());
-
-
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
-        panel.add(labelName);
-        panel.add(labelName1);
-        panel.add(nome);
-
-        panel.add(submeter);
-        panel.add(voltar);
-
-        return panel;
+    private void apagar(){
+        panelB.remove(sp);
+        panelB.remove(submeter);
+        String[] data = new String[manager.data().length];
+        for (int i = 0; i < data.length; i++) {
+            data[i] = manager.data()[i][0];
+        }
+        lista = new JList(data);
+        sp = new JScrollPane(lista);
+        manager.saveFile();
+        panelB.add(sp);
+        panelB.add(submeter);
+        frame.invalidate();
+        frame.validate();
+        frame.repaint();
     }
+
 
     private class ButtonListener implements ActionListener {
         @Override
@@ -85,16 +101,19 @@ public class ApagarEmpresa extends JFrame{
                     frame.dispose();
                     new LoadMain();
                     break;
-                case "Submeter":
-                    //ALTERAR PARA APAGAR SO AS EMPRESAS QUE EXISTEM
-                    if (nome.getText().equals("qwerty"))
-                        JOptionPane.showMessageDialog(null, "Empresa nao existe");
-                    else
-                        JOptionPane.showMessageDialog(null, "Empresa apagada");
+                case "Apagar":
+                    if(lista.getSelectedValue() != null){
+                        int option = JOptionPane.showConfirmDialog(null, "Pretende apagar a empresa " + lista.getSelectedValue(), "Comfirmar", JOptionPane.YES_NO_OPTION);
+                        if(option == 0 ){
+                            if(manager.delete(lista.getSelectedIndex()) == 0){
+                                apagar();
+                                JOptionPane.showMessageDialog(null, "Empresa apagada com sucesso", "Empresa apagada", JOptionPane.YES_OPTION);
 
-                    frame.setVisible(false);
-                    frame.dispose();
-                    new LoadMain();
+                            }else{
+                                JOptionPane.showMessageDialog(null, "Erro ao apagar empresa", "empresa nao apagada", JOptionPane.YES_OPTION);
+                            }   
+                        }
+                    }
                     break;
             }
         }

@@ -1,4 +1,6 @@
+
 import javax.swing.*;
+
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -6,7 +8,7 @@ import java.awt.event.ActionListener;
 public class AddEmpresa extends JFrame{
 
     private JFrame frame;
-    private JPanel panelA, panelB;
+    private JPanel panelA;
     private JButton submeter, voltar;
     private JTextField nome;
 
