@@ -9,15 +9,18 @@ public class LoadMain extends JFrame{
 
     private JPanel panelA;
     private JFrame frame;
-    private JButton botao1, botao2, botao3, botao4;
+    private JButton botao1, botao2, botao3;
     private Font fonte = new Font("Arial", Font.BOLD, 25);
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
     private Empresa empresa;
+    private StarThrive manager;
 
-    public LoadMain() {
+    public LoadMain(StarThrive manager) {
+        this.manager = manager;
+
         frame = new JFrame();
-        frame.setTitle("Aula 01");
+        frame.setTitle("StarThrive");
 
         frame.setSize(1000,800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -41,18 +44,15 @@ public class LoadMain extends JFrame{
         botao1 = new JButton();
         botao2 = new JButton();
         botao3 = new JButton();
-        botao4 = new JButton();
 
         botao1.setText("Adicionar empresa");
-        botao2.setText("Editar empresa");
-        botao3.setText("Apagar empresa");
-        botao4.setText("Listar empresas");
+        botao2.setText("Editar ou Apagar empresa");
+        botao3.setText("Listar empresas");
 
         //atribui posicao e tamanho aos botoes
-        botao1.setBounds (350, 400, 300,70);
-        botao2.setBounds (350, 200, 300,70);
-        botao3.setBounds (350, 300, 300,70);
-        botao4.setBounds (350, 100, 300,70);
+        botao1.setBounds (200, 300, 600,70);
+        botao2.setBounds (200, 200, 600,70);
+        botao3.setBounds (200, 100, 600,70);
 
         //define as cores dos botoes, o tamanho e cor da letra
         botao1.setFont(fonte);
@@ -67,15 +67,10 @@ public class LoadMain extends JFrame{
         botao3.setForeground(fgColor);
         botao3.setBackground(bgColor);
 
-        botao4.setFont(fonte);
-        botao4.setForeground(fgColor);
-        botao4.setBackground(bgColor);
-
         //atribui acoes aos botoes
         botao1.addActionListener(new ButtonListener());
         botao2.addActionListener(new ButtonListener());
         botao3.addActionListener(new ButtonListener());
-        botao4.addActionListener(new ButtonListener());
 
         //cria painel e addiciona os compenentes
         JPanel panel = new JPanel();
@@ -85,7 +80,6 @@ public class LoadMain extends JFrame{
         panel.add(botao1);
         panel.add(botao2);
         panel.add(botao3);
-        panel.add(botao4);
 
         return panel;
 
@@ -101,18 +95,15 @@ public class LoadMain extends JFrame{
                     frame.dispose();
                     new AddEmpresa(empresa);
                     break;
-                case "Editar empresa":
-                    JOptionPane.showMessageDialog(null, "Editar empresa");
-                    break;
-                case "Apagar empresa":
+                case "Editar ou Apagar empresa":
                     frame.setVisible(false);
                     frame.dispose();
-                    new ApagarEmpresa();
+                    new ApagarEmpresa(manager);
                     break;
                 case "Listar empresas":
                     frame.setVisible(false);
                     frame.dispose();
-                    new ListarEmpresa();
+                    new ListarEmpresa(manager);
                     break;
             }
         }

@@ -5,11 +5,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ApagarEmpresa extends JFrame{
+public class ApagarEmpresa extends JFrame {
 
     private JFrame frame;
-    private JButton submeter, voltar;
-    private JPanel panelA, panelB;
+    private JButton apagar, voltar, editar;
+    private JPanel panelA, panelB, panelC, panelD;
     private JList lista;
     private JScrollPane sp;
 
@@ -17,12 +17,17 @@ public class ApagarEmpresa extends JFrame{
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
 
-    private StarThrive manager = new StarThrive();
+    private StarThrive manager;
+    private String[] dados;
+    JLabel labels[];
+    JTextField textFields[];
 
-    public ApagarEmpresa() {
+    public ApagarEmpresa(StarThrive manager) {
+        this.manager = manager;
+
         frame = new JFrame();
-        frame.setTitle("Aula 01");
-        frame.setSize(1000,800);
+        frame.setTitle("Editar");
+        frame.setSize(1000, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -31,20 +36,23 @@ public class ApagarEmpresa extends JFrame{
         labelName.setFont(fonte);
 
         voltar = new JButton("Voltar");
-        voltar.setBounds(500, 700, 200, 40);
         voltar.setFont(fonte);
         voltar.setForeground(fgColor);
         voltar.setBackground(bgColor);
         voltar.addActionListener(new ButtonListener());
 
-        submeter = new JButton("Apagar");
-        submeter.setBounds(500, 700, 200, 40);
-        submeter.setFont(fonte);
-        submeter.setForeground(fgColor);
-        submeter.setBackground(bgColor);
-        submeter.addActionListener(new ButtonListener());
+        apagar = new JButton("Apagar");
+        apagar.setFont(fonte);
+        apagar.setForeground(fgColor);
+        apagar.setBackground(bgColor);
+        apagar.addActionListener(new ButtonListener());
 
-        
+        editar = new JButton("Editar");
+        editar.setFont(fonte);
+        editar.setForeground(fgColor);
+        editar.setBackground(bgColor);
+        editar.addActionListener(new ButtonListener());
+
         String[] data = new String[manager.data().length];
         for (int i = 0; i < data.length; i++) {
             data[i] = manager.data()[i][0];
@@ -53,13 +61,16 @@ public class ApagarEmpresa extends JFrame{
         lista = new JList(data);
 
         sp = new JScrollPane(lista);
-        
+
+        panelC = new JPanel();
+        panelC.setLayout(new GridLayout(2, 1));
+        panelC.add(apagar);
+        panelC.add(editar);
 
         panelB = new JPanel();
         panelB.setLayout(new GridLayout(1, 2));
         panelB.add(sp);
-        panelB.add(submeter);
-
+        panelB.add(panelC);
 
         panelA = new JPanel();
         panelA.setLayout(new BorderLayout());
@@ -71,9 +82,9 @@ public class ApagarEmpresa extends JFrame{
         frame.setVisible(true);
     }
 
-    private void apagar(){
+    private void apagar() {
         panelB.remove(sp);
-        panelB.remove(submeter);
+        panelB.add(panelC);
         String[] data = new String[manager.data().length];
         for (int i = 0; i < data.length; i++) {
             data[i] = manager.data()[i][0];
@@ -82,12 +93,48 @@ public class ApagarEmpresa extends JFrame{
         sp = new JScrollPane(lista);
         manager.saveFile();
         panelB.add(sp);
-        panelB.add(submeter);
+        panelB.add(panelC);
         frame.invalidate();
         frame.validate();
         frame.repaint();
     }
 
+    private void editLayout(int i) {
+        panelA.remove(panelB);
+        frame.invalidate();
+        frame.validate();
+        frame.repaint();
+
+        String empresa = manager.get(i).toString();
+        String[] empresaArray = empresa.split("\n");
+        labels = new JLabel[empresaArray.length - 2];
+        textFields = new JTextField[empresaArray.length - 2];
+
+        panelD = new JPanel();
+        panelD.setLayout(new GridLayout(empresaArray.length - 1, 2));
+
+        for (int j = 2; j < empresaArray.length; j++) {
+            labels[j - 2] = new JLabel(empresaArray[j].split(":")[0].strip());
+            panelD.add(labels[j - 2]);
+            textFields[j - 2] = new JTextField(empresaArray[j].split(":")[1].strip());
+            panelD.add(textFields[j - 2]);
+        }
+
+        JLabel label = new JLabel();
+        JButton confirmar = new JButton("Confirmar");
+        confirmar.setFont(fonte);
+        confirmar.setForeground(fgColor);
+        confirmar.setBackground(bgColor);
+        confirmar.addActionListener(new ButtonListener());
+
+        panelD.add(label);
+        panelD.add(confirmar);
+
+        panelA.add(panelD);
+        frame.invalidate();
+        frame.validate();
+        frame.repaint();
+    }
 
     private class ButtonListener implements ActionListener {
         @Override
@@ -97,20 +144,44 @@ public class ApagarEmpresa extends JFrame{
                 case "Voltar":
                     frame.setVisible(false);
                     frame.dispose();
-                    new LoadMain();
+                    new LoadMain(manager);
                     break;
                 case "Apagar":
-                    if(lista.getSelectedValue() != null){
-                        int option = JOptionPane.showConfirmDialog(null, "Pretende apagar a empresa " + lista.getSelectedValue(), "Comfirmar", JOptionPane.YES_NO_OPTION);
-                        if(option == 0 ){
-                            if(manager.delete(lista.getSelectedIndex()) == 0){
+                    if (lista.getSelectedValue() != null) {
+                        int option = JOptionPane.showConfirmDialog(null,
+                                "Pretende apagar a empresa " + lista.getSelectedValue(), "Comfirmar",
+                                JOptionPane.YES_NO_OPTION);
+                        if (option == 0) {
+                            if (manager.delete(lista.getSelectedIndex()) == 0) {
                                 apagar();
-                                JOptionPane.showMessageDialog(null, "Empresa apagada com sucesso", "Empresa apagada", JOptionPane.YES_OPTION);
+                                JOptionPane.showMessageDialog(null, "Empresa apagada com sucesso", "Empresa apagada",
+                                        JOptionPane.YES_OPTION);
 
-                            }else{
-                                JOptionPane.showMessageDialog(null, "Erro ao apagar empresa", "empresa nao apagada", JOptionPane.YES_OPTION);
-                            }   
+                            } else {
+                                JOptionPane.showMessageDialog(null, "Erro ao apagar empresa", "empresa nao apagada",
+                                        JOptionPane.YES_OPTION);
+                            }
                         }
+                    }
+                    break;
+                case "Editar":
+                    if (lista.getSelectedValue() != null) {
+                        editLayout(lista.getSelectedIndex());
+                    }
+                    break;
+                case "Confirmar":
+                    dados = new String[textFields.length];
+                    int i = 0;
+                    for (JTextField field : textFields) {
+                        dados[i] = field.getText();
+                        i++;
+                    }
+                    if(manager.get(lista.getSelectedIndex()).save(dados) == 0){
+                        panelA.remove(panelD);
+                        panelA.add(panelB);
+                        JOptionPane.showMessageDialog(null, "Empresa modificado com sucesso", "empresa modificada",
+                                        JOptionPane.YES_OPTION);
+                        apagar();
                     }
                     break;
             }

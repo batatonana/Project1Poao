@@ -24,6 +24,19 @@ public class Frutaria extends Mercearia{
         return data;
     }
 
+    @Override
+    public int save(String[] data){
+        try {
+            super.save(data);
+            setProdutos(Integer.parseInt(data[4]));
+            setFaturacaoProduto(Double.parseDouble(data[5]));
+            if(getValid()) return 0;
+            return -1;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
     public void setFaturacaoProduto(double faturacaoProduto) {
         if (faturacaoProduto < 0){
             setValid(false);

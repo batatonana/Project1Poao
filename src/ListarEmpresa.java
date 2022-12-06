@@ -18,13 +18,13 @@ public class ListarEmpresa extends JFrame {
     private JTable table;
     private JScrollPane sp;
     // Creating a StarTrhrive object and populating it
-    private StarThrive manager = new StarThrive();
+    private StarThrive manager;
 
-    public ListarEmpresa() {
-        System.out.println("HEYYYYYYYYYYY");
+    public ListarEmpresa(StarThrive manager) {
+        this.manager = manager;
         // Set frame Dimensions
         frame = new JFrame();
-        frame.setTitle("Aula 01");
+        frame.setTitle("Listar");
         frame.setSize(1000, 800);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setLocationRelativeTo(null);
@@ -176,7 +176,7 @@ public class ListarEmpresa extends JFrame {
                 case "Voltar":
                     frame.setVisible(false);
                     frame.dispose();
-                    new LoadMain();
+                    new LoadMain(manager);
                     break;
                 case "Search":
                     switch (dropdown.getSelectedIndex()) {

@@ -617,7 +617,7 @@ public class AddEmpresa extends JFrame{
                 case "Voltar":
                     frame.setVisible(false);
                     frame.dispose();
-                    new LoadMain();
+                    //new LoadMain();
                     break;
                 case "Submeter":
 
@@ -630,7 +630,7 @@ public class AddEmpresa extends JFrame{
                                     JOptionPane.showMessageDialog(null, "Empresa adicionada");
                                     frame.setVisible(false);
                                     frame.dispose();
-                                    new LoadMain();
+                                    //new LoadMain();
                                 } catch (Exception e) {
                                     JOptionPane.showMessageDialog(null, "Error: Atributos invalidos");
                                 }

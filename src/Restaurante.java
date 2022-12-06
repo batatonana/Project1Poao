@@ -39,6 +39,21 @@ public abstract class Restaurante extends Restauracao {
             this.diasEmFuncionamento = diasEmFuncionamento;
         }
     }   
+
+    @Override
+    public int save(String[] data){
+        try {
+            super.save(data);
+            setDiasEmFuncionamento(Integer.parseInt(data[6]));
+            setMesasInt(Integer.parseInt(data[7]));
+            setFaturacaoMesa(Double.parseDouble(data[8]));
+            if(getValid()) return 0;
+            return -1;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
     public double getFaturacaoMesa() {
         return faturacaoMesa;
     }

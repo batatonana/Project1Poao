@@ -1,12 +1,16 @@
-/**
- * Class where the main function is run
- */
 import java.io.*;
 import java.util.ArrayList;
-
+/**
+ * Class where the main function is run
+ * @author Frederico Ferriera 2021217116; Telmo Correia 2019224775 
+ */
 public class StarThrive implements Serializable{
     //Array for all the "Empresas"
     private ArrayList<Empresa> empresas = new ArrayList<Empresa>();
+
+    public Empresa get(int index){
+        return empresas.get(index);
+    }
 
     public StarThrive(){
         readObjFile();
@@ -115,6 +119,7 @@ public class StarThrive implements Serializable{
         }
         return data;
     }
+    
     /**
      * Function used to save data to a .obj file
      */
@@ -165,7 +170,7 @@ public class StarThrive implements Serializable{
                             add(empresa);
                             break;
                         case 3:
-                            empresa = new Fast_Food(attributes[1], Double.parseDouble(attributes[2]), Double.parseDouble(attributes[3]), attributes[4], Integer.parseInt(attributes[5]), Double.parseDouble(attributes[6]), Double.parseDouble(attributes[7]), Integer.parseInt(attributes[8]),  Integer.parseInt(attributes[9]), Double.parseDouble(attributes[10]) , Double.parseDouble(attributes[11]), Double.parseDouble(attributes[12]));
+                            empresa = new FastFood(attributes[1], Double.parseDouble(attributes[2]), Double.parseDouble(attributes[3]), attributes[4], Integer.parseInt(attributes[5]), Double.parseDouble(attributes[6]), Double.parseDouble(attributes[7]), Integer.parseInt(attributes[8]),  Integer.parseInt(attributes[9]), Double.parseDouble(attributes[10]) , Double.parseDouble(attributes[11]), Double.parseDouble(attributes[12]));
                             add(empresa);
                             break;
                         case 4:
@@ -190,7 +195,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Function to data from the .obj file.
-     * If object file is not found calls the function {@link readFile()}
+     * If object file is not found calls the function {@link #readFile()}
      */
     public void readObjFile(){
         File obj = new File("Empresas.dat");
@@ -209,7 +214,9 @@ public class StarThrive implements Serializable{
             System.out.println("Class not founf");
         }
     }
+    
     public static void main(String[] args) {
-        new LoadMain();
+        StarThrive manager = new StarThrive();
+        new LoadMain(manager);
     }
 }

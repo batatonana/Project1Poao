@@ -1,4 +1,3 @@
-
 public class Cafe extends Restauracao {
     private double cafeVendidoDia;
     private double faturacaoAnualCafe;
@@ -12,6 +11,15 @@ public class Cafe extends Restauracao {
     @Override
     public int getTipo() {
         return 0;
+    }
+    
+    @Override
+    public int save(String[] data) {
+        super.save(data);
+        setCafeVendidoDia(Double.parseDouble(data[6]));
+        setFaturacaoAnualCafe(Double.parseDouble(data[7]));
+        if(getValid()) return 0;
+        return -1;
     }
 
     @Override

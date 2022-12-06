@@ -12,6 +12,17 @@ public abstract class Mercearia extends Empresa {
         return custoLimpeza;
     }
 
+    @Override
+    public int save(String[] data){
+        try {
+            super.save(data);
+            setCustoLimpeza(Double.parseDouble(data[3]));
+            if(getValid()) return 0;
+            return -1;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
     
     public abstract double receitaAnual();
 

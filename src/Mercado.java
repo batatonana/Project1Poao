@@ -26,6 +26,20 @@ public class Mercado extends Mercearia{
         return data;
     }
 
+    @Override
+    public int save(String[] data){
+        try {
+            super.save(data);
+            setType(data[4]);
+            setArea(Double.parseDouble(data[5]));
+            setFaturacaoArea(Double.parseDouble(data[6]));
+            if(getValid()) return 0;
+            return -1;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
     public void setType(String type) {
         if(type.equals("Mini") || type.equals("Super") || type.equals("Hiper")){
             this.type = type;
@@ -60,7 +74,7 @@ public class Mercado extends Mercearia{
 
     @Override
     public String toString() {
-        return "type: Mercado\n" + super.toString() + "type: " + type + "mercado\nArea: " + area + "\nFaturacao por metro quadrado: " + faturacaoArea + "\n";
+        return "Tipo: Mercado\n" + super.toString() + "Type: " + type + "mercado\nArea: " + area + "\nFaturacao por metro quadrado: " + faturacaoArea + "\n";
     }
 
 }

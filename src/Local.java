@@ -30,6 +30,19 @@ public class Local extends Restaurante{
         return data;
     }
 
+    @Override
+    public int save(String[] data){
+        try {
+            super.save(data);
+            setMesasEsp(Integer.parseInt(data[9]));
+            setLicencaEsp(Double.parseDouble(data[10]));
+            if(getValid()) return 0;
+            return -1;
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+
     public void setMesasEsp(int mesasEsp) {
         if(mesasEsp < 0){
             setValid(false);
@@ -44,6 +57,8 @@ public class Local extends Restaurante{
             this.licencaEsp = licencaEsp;
         }
     }
+
+
     public double getLicencaEsp() {
         return licencaEsp;
     }

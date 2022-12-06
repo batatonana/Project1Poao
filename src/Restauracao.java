@@ -1,4 +1,3 @@
-
 /**
  * Superclass for all the companies restaurante-like
  * This class is a subclass of the class "Empresa"
@@ -45,6 +44,16 @@ public abstract class Restauracao extends Empresa {
         }else{
             this.clientesMedioDiario = clientesMedioDiario;
         }
+    }
+
+    @Override
+    public int save(String[] data){
+        super.save(data);
+        setClientesMedioDiario(Double.parseDouble(data[3]));
+        setSalarioMedioAnual(Double.parseDouble(data[4]));
+        setEmpregados(Integer.parseInt(data[5]));
+        if(getValid()) return 0;
+        return -1;
     }
 
     public double getClientesMedioDiario() {
