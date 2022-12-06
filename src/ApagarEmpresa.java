@@ -10,12 +10,10 @@ public class ApagarEmpresa extends JFrame{
     private JFrame frame;
     private JButton submeter, voltar;
     private JPanel panelA, panelB;
-    private JTextField nome;
     private JList lista;
     private JScrollPane sp;
 
     private Font fonte = new Font("Arial", Font.BOLD, 25);
-    private Font fonte1 = new Font("Arial", Font.BOLD, 20);
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
 

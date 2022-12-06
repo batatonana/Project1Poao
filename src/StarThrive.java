@@ -198,8 +198,12 @@ public class StarThrive implements Serializable{
             System.out.println("File found and opened");
             FileInputStream fis = new FileInputStream(obj);
             ObjectInputStream ois = new ObjectInputStream(fis);
-
-           this.empresas = (ArrayList<Empresa>)ois.readObject();
+            try {
+                this.empresas = (ArrayList<Empresa>)ois.readObject();
+            } catch (Exception e) {
+                System.out.println("File corrupted");
+            }
+           
 
            ois.close();
         }catch(FileNotFoundException e){
