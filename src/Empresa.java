@@ -26,6 +26,8 @@ public abstract class Empresa implements Serializable {
     public abstract double despesaAnual();
     public abstract double receitaAnual();
 
+    public abstract int getTipo();
+
     public double capacidadeClientes(){
         return -1;
     }

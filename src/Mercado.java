@@ -1,12 +1,12 @@
 public class Mercado extends Mercearia{
-    private String tipo;
+    private String type;
     private double area;
     private double faturacaoArea;
 
-    public Mercado(String name, double latitude, double longitude, String distrito, double custoLimpeza, String tipo, double area, double faturacaoArea){
+    public Mercado(String name, double latitude, double longitude, String distrito, double custoLimpeza, String type, double area, double faturacaoArea){
         super(name, latitude, longitude, distrito, custoLimpeza);
         setArea(area);
-        setTipo(tipo);
+        setType(type);
         setFaturacaoArea(faturacaoArea);
     }
 
@@ -15,9 +15,15 @@ public class Mercado extends Mercearia{
         return area * faturacaoArea;
     }
 
-    public void setTipo(String tipo) {
-        if(tipo == "Mini" || tipo == "Super" || tipo == "Hiper"){
-            this.tipo = tipo;
+    @Override
+    public int getTipo() {
+        return 5;
+    }
+
+
+    public void setType(String type) {
+        if(type.equals("Mini") || type.equals("Super") || type.equals("Hiper")){
+            this.type = type;
         }else{
             setValid(false);
         }
@@ -37,8 +43,8 @@ public class Mercado extends Mercearia{
         }
     }
 
-    public String getTipo() {
-        return tipo;
+    public String gettype() {
+        return type;
     }
     public double getFaturacaoArea() {
         return faturacaoArea;
@@ -49,7 +55,7 @@ public class Mercado extends Mercearia{
 
     @Override
     public String toString() {
-        return "Tipo: Mercado\n" + super.toString() + "Tipo: " + tipo + "mercado\nArea: " + area + "\nFaturacao por metro quadrado: " + faturacaoArea + "\n";
+        return "type: Mercado\n" + super.toString() + "type: " + type + "mercado\nArea: " + area + "\nFaturacao por metro quadrado: " + faturacaoArea + "\n";
     }
 
 }

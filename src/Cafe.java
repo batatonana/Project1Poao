@@ -10,6 +10,11 @@ public class Cafe extends Restauracao {
     }
 
     @Override
+    public int getTipo() {
+        return 0;
+    }
+
+    @Override
     public double receitaAnual() {
         return faturacaoAnualCafe * cafeVendidoDia;
     }

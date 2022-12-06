@@ -1,5 +1,5 @@
 
-public class Restaurante extends Restauracao {
+public abstract class Restaurante extends Restauracao {
     protected int diasEmFuncionamento;
     protected int mesasInt;
     protected double faturacaoMesa;
@@ -17,7 +17,6 @@ public class Restaurante extends Restauracao {
     public double receitaAnual() {
         return mesasInt*faturacaoMesa*diasEmFuncionamento;
     }
-
     
     public void setFaturacaoMesa(double faturacaoMesa) {
         if(faturacaoMesa < 0){

@@ -9,6 +9,10 @@ public class Fast_Food extends Restaurante{
         setFaturacaoDrive(faturacaoDrive);        
     }
 
+    @Override
+    public int getTipo() {
+        return 3;
+    }
 
     @Override
     public double receitaAnual() {

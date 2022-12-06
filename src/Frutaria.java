@@ -1,4 +1,3 @@
-
 public class Frutaria extends Mercearia{
     private int produtos;
     private double faturacaoProduto;
@@ -12,6 +11,11 @@ public class Frutaria extends Mercearia{
     @Override
     public double receitaAnual() {
         return produtos * faturacaoProduto;
+    }
+
+    @Override
+    public int getTipo() {
+        return 4;
     }
 
     public void setFaturacaoProduto(double faturacaoProduto) {

@@ -10,6 +10,11 @@ public class Local extends Restaurante{
     }
 
     @Override
+    public int getTipo() {
+        return 2;
+    }
+
+    @Override
     public double despesaAnual() {
         return super.despesaAnual() + (mesasEsp * licencaEsp);
     }

@@ -14,6 +14,11 @@ public class Pastelaria extends Restauracao{
         return faturacaoAnualBolo * boloVendidoDia;
     }
 
+    @Override
+    public int getTipo() {
+        return 1;
+    }
+
     public void setFaturacaoAnualBolo(double faturacaoAnualBolo) {
         if(faturacaoAnualBolo < 0){
             setValid(false);
