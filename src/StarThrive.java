@@ -20,10 +20,19 @@ public class StarThrive implements Serializable{
         }
     }
 
-    public void print(){
+    public String[][] data(){
+        String[][] data = new String[empresas.size()][6];
+        int index = 0;
         for (Empresa empresa : empresas) {
-            System.out.println(empresa);
+            data[index][0] = empresa.name;
+            data[index][1] = "string";
+            data[index][2] = empresa.distrito;
+            data[index][3] = String.format("%.2f",  empresa.despesaAnual());
+            data[index][4] = String.format("%.2f", empresa.receitaAnual());
+            data[index][5] = (empresa.receitaAnual() >= 0 ? "Receita de " : "Prejuizo de ") + String.format("%.2f", empresa.receitaAnual());
+            index += 1;
         }
+        return data;
     }
 
     public void printClientes(){
@@ -142,10 +151,9 @@ public class StarThrive implements Serializable{
     }
     
     public static void main(String[] args) {
-        new LandingPage();
+        new LoadMain();
         StarThrive manager = new StarThrive();
         manager.readObjFile();
-        manager.print();
         manager.printClientes();
     }
 }

@@ -1,6 +1,5 @@
 
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -8,13 +7,15 @@ import java.awt.event.ActionListener;
 public class ListarEmpresa extends JFrame {
 
     private JFrame frame;
-    private JPanel panelA;
-    private JButton  voltar;
-    private Font fonte = new Font("Arial", Font.BOLD, 25);
+    private JPanel panelA, panelB;
+    private JButton  voltar, submit;
+    private Font fonte = new Font("Arial", Font.BOLD, 30);
+    private JComboBox dropdown;
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
 
     public ListarEmpresa() {
+        // Set frame Dimensions
         frame = new JFrame();
         frame.setTitle("Aula 01");
         frame.setSize(1000, 800);
@@ -22,37 +23,49 @@ public class ListarEmpresa extends JFrame {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
-        panelA = drawPanel();
-        panelA.setVisible(true);
-
-        frame.add(panelA);
-        frame.setVisible(true);
-
-    }
-
-    private JPanel drawPanel() {
-
-        JLabel labelName = new JLabel("Lista de empresas");
-        labelName.setBounds(400-25, 0, 250,100);
-        labelName.setFont(fonte);
-
         voltar = new JButton();
         voltar.setText("Voltar");
         voltar.setBounds (500, 700, 200,40);
-        voltar.setFont(new Font("Arial", Font.BOLD, 30));
+        voltar.setFont(fonte);
         voltar.setForeground(fgColor);
         voltar.setBackground(bgColor);
-
-        //atribui acoes aos botoes
         voltar.addActionListener(new ButtonListener());
 
-        //cria painel e addiciona os compenentes
-        JPanel panel = new JPanel();
-        panel.setLayout(null);
-        panel.add(labelName);
-        panel.add(voltar);
+        submit = new JButton();
+        submit.setText("Submit");
+        submit.setFont(fonte);
+        submit.setForeground(fgColor);
+        submit.setBackground(bgColor);
+        submit.addActionListener(new ButtonListener());
+        
+        // String[] s= {"Listar todas", "Listar maior lucro", "Mostrar clientes"};
+        // dropdown = new JComboBox();
+        String country[]={"India","Aus","U.S.A","England","Newzealand"};
+        dropdown = new JComboBox(country);
 
-        return panel;
+
+        StarThrive manager = new StarThrive();
+        manager.readObjFile();
+
+        String[][] data = manager.data();
+        String[] columnNames = { "Nome", "Tipo", "Distrito", "Despesa Anual", "Receita Anual", "Lucro" };
+        JTable j = new JTable(data, columnNames);
+        j.setBounds(30, 40, 200, 300);
+        JScrollPane sp = new JScrollPane(j);
+        
+        panelB = new JPanel();
+        panelB.setLayout(new GridLayout(1,2));
+        panelB.add(dropdown);
+        panelB.add(submit);
+        panelA = new JPanel();
+        panelA.setLayout(new BorderLayout());
+        panelA.add(sp, BorderLayout.CENTER);
+        panelA.add(voltar, BorderLayout.SOUTH);
+        panelA.add(panelB, BorderLayout.NORTH);
+            
+        frame.add(panelA);
+        // Frame Visible = true
+        frame.setVisible(true);
     }
 
 
@@ -70,6 +83,5 @@ public class ListarEmpresa extends JFrame {
             }
         }
     }
-
 }
 

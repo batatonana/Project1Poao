@@ -47,11 +47,11 @@ public class LoadMain extends JFrame{
         botao3.setText("Apagar empresa");
         botao4.setText("Listar empresas");
 
-        //atribui posicao e tamnho aos botoes
-        botao1.setBounds (100, 100, 275,70);
+        //atribui posicao e tamanho aos botoes
+        botao1.setBounds (100, 400, 275,70);
         botao2.setBounds (100, 200, 275,70);
         botao3.setBounds (100, 300, 275,70);
-        botao4.setBounds (100, 400, 275,70);
+        botao4.setBounds (100, 100, 275,70);
 
         //define as cores dos botoes, o tamanho e cor da letra
         botao1.setFont(fonte);
