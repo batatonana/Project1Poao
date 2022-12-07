@@ -4,20 +4,35 @@ import java.io.Serializable;
  * Superclass for all the companies managed by StarThrive
  */
 public abstract class Empresa implements Serializable {
+    /**
+     * Coordenadas coordenadas call
+     */
     protected Coordenadas coordenadas;
+    /**
+     * valid boolean flag
+     */
     protected boolean valid = true;
+    /**
+     * name of empresa
+     */
     protected String name;
+    /**
+     * distrito of empresa
+     */
     protected String distrito;
+    /**
+     * id of empresa
+     */
     protected int id;
 
     private static int maxId = 0;
 
     /**
      * Class constructor
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
      */
     public Empresa(String name, double latitude, double longitude, String distrito){
         setName(name);
@@ -29,7 +44,7 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Method used on exercice 2 to get the type of each class
-     * @return
+     * @return tipo
      */
     public abstract int getTipo();
 
@@ -55,13 +70,13 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Method that return some data to be displayed in the GUI 
-     * @return
+     * @return data to be displayed in the GUI
      */
     public abstract String[] toTable();
 
     /**
      * Method used to update the data of each empresa
-     * @param array of data
+     * @param data array of data
      * @return 0 if successful, -1 if not
      */
     public int save(String[] data){
@@ -91,7 +106,7 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Setter for the name accepts any name greaetd than 1
-     * @param name
+     * @param name the name of empresa
      */
     public void setName(String name) {
         if(name != null && name.length()>1){
@@ -103,8 +118,8 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Creates an instance of the class coordenadas is the params are valid
-     * @param latitude
-     * @param longitude
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
      */
     public void setCoordenadas(double latitude, double longitude) {
         Coordenadas coordenadasAux = new Coordenadas(latitude, longitude);
@@ -117,7 +132,7 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Setter for distrito, accepts any name started with uppercase
-     * @param distrito
+     * @param distrito the distrito of empresa
      */
     public void setDistrito(String distrito) {
         if(distrito.charAt(0)>= 'Z' || distrito.charAt(0) <= 'A'){
@@ -129,6 +144,7 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Setter for valid, this attribute dertemines if the object is valid or not
+     * @param valid boolean
      */
     public void setValid(boolean valid) {
         this.valid = valid;
@@ -152,7 +168,7 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Getter for name
-     * @return name
+     * @return name the name of empresa
      */
     public String getName() {
         return name;

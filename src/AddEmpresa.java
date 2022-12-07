@@ -4,34 +4,96 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
+/**
+ * Class os the GUI to add empresas
+ */
 
 public class AddEmpresa extends JFrame {
-
+    /**
+     * Empresa empresa call
+     */
     private Empresa empresa;
-
+    /**
+     * type empresa
+     */
     private String type = "";
+    /**
+     * Frame
+     */
     private JFrame frame;
+    /**
+     * Panel 
+     */
     private JPanel panelA;
+    /**
+     * Button actions
+     */
     private JButton submeter, voltar;
+    /**
+     * TextField to comun params
+     */
     private JTextField nome, lon, lat, dist;
+    /**
+     * TextField cafes
+     */
     private JTextField nomeCafe1, nomeCafe2, nomeCafe3, nomeCafe4;
+    /**
+     * TextField Restaurantes
+     */
     private JTextField nomeRest1, nomeRest2, nomeRest3, nomeDrive1, nomeDrive2, nomeLocal1, nomeLocal2;
+    /**
+     * TextField Merceria
+     */
     private JTextField nomeMerc1, nomeMerc2, nomeMerc3, nomeMerc4;
     private JTextField nomeFrut1, nomeFrut2;
+    /**
+     * Labels cafes
+     */
     private JLabel labelCafe1, labelCafe2, labelCafe3, labelCafe4;
+    /**
+     * Labels Restaurantes
+     */
     private JLabel labelRest1, labelRest2, labelRest3, labelDrive1, labelDrive2, labelLocal1, labelLocal2;
     private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4;
     private JLabel labelFrut1, labelFrut2;
 
+    /**
+     * Labels Merceria
+     */
+    private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4, labelMerc5;
+    /**
+     * RadioButton options
+     */
     private JRadioButton rb1, rb2, rb3, rb4, rb5, rb6;
-
+    /**
+     * Button b
+     */
+    /**
+     * Fonte for titles
+     */
     private Font fonte = new Font("Arial", Font.BOLD, 25);
+    /**
+     * Fonte for subtitles
+     */
     private Font fonte1 = new Font("Arial", Font.BOLD, 20);
+    /**
+     * Foreground color
+     */
     private Color fgColor = new Color(10, 10, 10);
+    /**
+     * Background color
+     */
     private Color bgColor = new Color(100, 100, 150);
-
+    /**
+     * Creating a StarTrhrive object
+     */
     private StarThrive manager;
-
+    /**
+     * Class constructor to add empresas
+     * @param manager info from empresa
+     * @param empresa info from empresa
+     */
     public AddEmpresa(StarThrive manager, Empresa empresa) {
         this.manager = manager;
         this.empresa = empresa;
@@ -49,7 +111,10 @@ public class AddEmpresa extends JFrame {
         frame.setVisible(true);
 
     }
-
+    /**
+     * Draw add empresas panel
+     * @return panel
+     */
     public JPanel drawPanel() {
 
         JLabel labelName = new JLabel("Adiciona empresa");

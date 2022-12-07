@@ -3,22 +3,31 @@
  * Subclass of Restaurancao
  */
 public abstract class Restaurante extends Restauracao {
+    /**
+     * dias de funcionamento
+     */
     protected int diasEmFuncionamento;
+    /**
+     * number of mesas
+     */
     protected int mesasInt;
+    /**
+     * alues of faturacao por mesa
+     */
     protected double faturacaoMesa;
 
     /**
-     * Constructor for {@link #Restaurante}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param empregados
-     * @param salarioMedioAnual
-     * @param clientesMedioDiario
-     * @param diasEmFuncionamento
-     * @param mesasInt
-     * @param faturacaoMesa
+     * Constructor for Restaurante
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param empregados the number of empregados
+     * @param salarioMedioAnual the values of salario medio anual
+     * @param clientesMedioDiario the number of clientes medio diario
+     * @param diasEmFuncionamento the dias de funcionamento
+     * @param mesasInt the number of mesas
+     * @param faturacaoMesa the values of faturacao por mesa
      */
     public Restaurante(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario, int diasEmFuncionamento, int mesasInt, double faturacaoMesa){
         super(name, latitude, longitude, distrito, empregados, salarioMedioAnual, clientesMedioDiario);
@@ -48,7 +57,7 @@ public abstract class Restaurante extends Restauracao {
     
     /**
      * Setter for the average faturarion per interior table
-     * @param faturacaoMesa
+     * @param faturacaoMesa the values of faturacao por mesa
      */
     public void setFaturacaoMesa(double faturacaoMesa) {
         if(faturacaoMesa < 0){
@@ -59,7 +68,7 @@ public abstract class Restaurante extends Restauracao {
     }
     /**
      * Setter for the number of interior tables
-     * @param mesasInt
+     * @param mesasInt the number of mesas
      */
     public void setMesasInt(int mesasInt) {
         if(mesasInt < 0){
@@ -70,7 +79,7 @@ public abstract class Restaurante extends Restauracao {
     }
     /**
      * Setter for the number of working days on the year
-     * @param diasEmFuncionamento
+     * @param diasEmFuncionamento the dias de funcionamento
      */
     public void setDiasEmFuncionamento(int diasEmFuncionamento) {
         if(diasEmFuncionamento < 0){

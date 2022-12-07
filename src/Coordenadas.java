@@ -3,14 +3,23 @@ import java.io.Serializable;
  * Class with the coordenadas
  */
 public class Coordenadas implements Serializable{
+    /**
+     * latitude of empresa
+     */
     private double latitude;
+    /**
+     * longitude of empresa
+     */
     private double longitude;
+    /**
+     * valid boolean flag
+     */
     private boolean valid = true;
 
     /**
      * Constructor for the class coordenadas
-     * @param latitude
-     * @param longitude
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
      */
     public Coordenadas(double latitude, double longitude){
         this.setLatitude(latitude);
@@ -19,7 +28,7 @@ public class Coordenadas implements Serializable{
 
     /**
      * Setter for the latitude
-     * @param latitude
+     * @param latitude the latitude of empresa
      */
     public void setLatitude(double latitude) {
         if(latitude < -90 || latitude > 90){ 
@@ -30,7 +39,7 @@ public class Coordenadas implements Serializable{
     }
     /**
      * Setter for the longitude
-     * @param longitude
+     * @param longitude the longitude of empresa
      */
     public void setLongitude(double longitude) {
         if(longitude < -180 || longitude > 180){
@@ -41,7 +50,7 @@ public class Coordenadas implements Serializable{
     }
     /**
      * Setter for valid
-     * @param valid
+     * @param valid boolean
      */
     public void setValid(boolean valid) {
         this.valid = valid;
@@ -56,7 +65,7 @@ public class Coordenadas implements Serializable{
     }
     /**
      * Getter for the longitude
-     * @return
+     * @return longitude
      */
     public double getLongitude() {
         return longitude;

@@ -3,23 +3,29 @@
  * Subclass from Restaurante
  */
 public class FastFood extends Restaurante{
+    /**
+     * number of drive clients
+     */
     private double clientesDrive;
+    /**
+     * faturacao of drive clients
+     */
     private double faturacaoDrive;
 
     /**
-     * Constructor for the class {@link #FastFood}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param empregados
-     * @param salarioMedioAnual
-     * @param clientesMedioDiario
-     * @param diasEmFuncionamento
-     * @param mesasInt
-     * @param faturacaoMesa
-     * @param clientesDrive
-     * @param faturacaoDrive
+     * Constructor for the class FastFood
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param empregados the number of empregados
+     * @param salarioMedioAnual the values of salario medio anual
+     * @param clientesMedioDiario the number of clientes medio diario
+     * @param diasEmFuncionamento the dias de funcionamento
+     * @param mesasInt the number of mesas
+     * @param faturacaoMesa the values of faturacao por mesa
+     * @param clientesDrive the number of drive clients
+     * @param faturacaoDrive the faturacao of drive clients
      */
     public FastFood(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario, int diasEmFuncionamento, int mesasInt, double faturacaoMesa, double clientesDrive, double faturacaoDrive){
         super(name, latitude, longitude, distrito, empregados, salarioMedioAnual, clientesMedioDiario, diasEmFuncionamento, mesasInt, faturacaoMesa);
@@ -58,7 +64,7 @@ public class FastFood extends Restaurante{
 
     /**
      * Setter for the average number of drive thru clients per day
-     * @param clientesDrive
+     * @param clientesDrive the number of drive clients
      */
     public void setClientesDrive(double clientesDrive) {
         if (clientesDrive < 0){
@@ -69,7 +75,7 @@ public class FastFood extends Restaurante{
     }
     /**
      * Setter for the average faturation per client of the drive thru
-     * @param faturacaoDrive
+     * @param faturacaoDrive the faturacao of drive clients
      */
     public void setFaturacaoDrive(double faturacaoDrive) {
         if(faturacaoDrive < 0){
