@@ -4,16 +4,10 @@ import java.io.Serializable;
  * Superclass for all the companies managed by StarThrive
  */
 public abstract class Empresa implements Serializable {
-    protected int id;
     protected Coordenadas coordenadas;
     protected boolean valid = true;
     protected String name;
     protected String distrito;
-    
-    /**
-     * Variable to store the number of "empresas" created 
-     */
-    static private int created = 0;
 
     /**
      * Class constructor
@@ -23,8 +17,6 @@ public abstract class Empresa implements Serializable {
      * @param distrito
      */
     public Empresa(String name, double latitude, double longitude, String distrito){
-        id = created;
-        created += 1;
         setName(name);
         setDistrito(distrito);
         setCoordenadas(latitude, longitude);

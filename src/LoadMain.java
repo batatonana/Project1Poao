@@ -4,7 +4,9 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.*;
-
+/**
+ * Main GUI class
+ */
 public class LoadMain extends JFrame{
 
     private JPanel panelA;

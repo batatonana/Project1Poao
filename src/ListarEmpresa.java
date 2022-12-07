@@ -5,7 +5,9 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
+/**
+ * Class to list empresas
+ */
 public class ListarEmpresa extends JFrame {
 
     private JFrame frame;
@@ -13,11 +15,13 @@ public class ListarEmpresa extends JFrame {
     private JButton voltar, submit;
     private Font fonte = new Font("Arial", Font.BOLD, 30);
     private JComboBox dropdown;
+
     private Color fgColor = new Color(10, 10, 10);
     private Color bgColor = new Color(100, 100, 150);
     private JTable table;
     private JScrollPane sp;
-    // Creating a StarTrhrive object and populating it
+
+    // Creating a StarTrhrive object
     private StarThrive manager;
 
     public ListarEmpresa(StarThrive manager) {
@@ -45,10 +49,12 @@ public class ListarEmpresa extends JFrame {
         String country[] = { "Todas as empresas", "Empresas com maior lucro anual", "Empresas com maior receita anual",
                 "Empresas com menor despesa anual", "Restaurantes com mais clientes" };
         dropdown = new JComboBox(country);
+
         panelB = new JPanel();
         panelB.setLayout(new GridLayout(1, 2));
         panelB.add(dropdown);
         panelB.add(submit);
+
         panelA = new JPanel();
         panelA.setLayout(new BorderLayout());
         listarTodos();
@@ -78,8 +84,11 @@ public class ListarEmpresa extends JFrame {
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getTableHeader().setReorderingAllowed(false);
+
         sp = new JScrollPane(table);
+
         panelA.add(sp, BorderLayout.CENTER);
+
         frame.invalidate();
         frame.validate();
         frame.repaint();
@@ -94,13 +103,17 @@ public class ListarEmpresa extends JFrame {
             }
         };
         panelA.remove(sp);
+
         table = new JTable(data, columnNames);
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getTableHeader().setReorderingAllowed(false);
+
         sp = new JScrollPane(table);
+
         panelA.add(sp, BorderLayout.CENTER);
+
         frame.invalidate();
         frame.validate();
         frame.repaint();
@@ -115,13 +128,17 @@ public class ListarEmpresa extends JFrame {
             }
         };
         panelA.remove(sp);
+
         table = new JTable(data, columnNames);
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getTableHeader().setReorderingAllowed(false);
+
         sp = new JScrollPane(table);
+
         panelA.add(sp, BorderLayout.CENTER);
+
         frame.invalidate();
         frame.validate();
         frame.repaint();
@@ -129,20 +146,25 @@ public class ListarEmpresa extends JFrame {
     private void listarDespesa() {
         String[][] data = manager.stats(2);
         String[] columnNames = { "Nome", "Tipo", "Despesa Anual" };
+        
+        panelA.remove(sp);
+
         DefaultTableModel tableModel = new DefaultTableModel(data, columnNames) {
             @Override
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
         };
-        panelA.remove(sp);
         table = new JTable(data, columnNames);
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getTableHeader().setReorderingAllowed(false);
+
         sp = new JScrollPane(table);
+
         panelA.add(sp, BorderLayout.CENTER);
+
         frame.invalidate();
         frame.validate();
         frame.repaint();
@@ -157,13 +179,17 @@ public class ListarEmpresa extends JFrame {
             }
         };
         panelA.remove(sp);
+
         table = new JTable(data, columnNames);
         table.setBounds(30, 40, 200, 300);
         table.setModel(tableModel);
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
         table.getTableHeader().setReorderingAllowed(false);
+
         sp = new JScrollPane(table);
+
         panelA.add(sp, BorderLayout.CENTER);
+
         frame.invalidate();
         frame.validate();
         frame.repaint();

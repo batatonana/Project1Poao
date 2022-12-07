@@ -5,6 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ *Class os the GUI to edit and delete empresas
+ */
 public class ApagarEmpresa extends JFrame {
 
     private JFrame frame;
@@ -19,8 +22,8 @@ public class ApagarEmpresa extends JFrame {
 
     private StarThrive manager;
     private String[] dados;
-    JLabel labels[];
-    JTextField textFields[];
+    private JLabel labels[];
+    private JTextField textFields[];
 
     public ApagarEmpresa(StarThrive manager) {
         this.manager = manager;
@@ -85,15 +88,21 @@ public class ApagarEmpresa extends JFrame {
     private void apagar() {
         panelB.remove(sp);
         panelB.add(panelC);
+
+        //Populating the array data
         String[] data = new String[manager.data().length];
         for (int i = 0; i < data.length; i++) {
             data[i] = manager.data()[i][0];
         }
-        lista = new JList(data);
-        sp = new JScrollPane(lista);
         manager.saveFile();
+
+        lista = new JList(data);
+
+        sp = new JScrollPane(lista);
+
         panelB.add(sp);
         panelB.add(panelC);
+
         frame.invalidate();
         frame.validate();
         frame.repaint();
