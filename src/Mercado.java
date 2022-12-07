@@ -1,13 +1,13 @@
 /**
  * Class Mercado,
- * Subclass form {@link #Mercearia}
+ * Subclass form Mercearia
  */
 public class Mercado extends Mercearia{
     private String type;
     private double area;
     private double faturacaoArea;
     /**
-     * Constructor for the class {@link #Mercado}
+     * Constructor for the class Mercado
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

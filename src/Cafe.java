@@ -1,9 +1,15 @@
 /**
  * Class Cafe, 
- * Subclass form {@link #Restauracao}
+ * Subclass form Restauracao
  */
 public class Cafe extends Restauracao {
+    /**
+     * number of cafes vendidos por dia
+     */
     private double cafeVendidoDia;
+    /**
+     * faturacao anual por cafe
+     */
     private double faturacaoAnualCafe;
 
     /**
@@ -24,7 +30,7 @@ public class Cafe extends Restauracao {
         setCafeVendidoDia(cafeVendidoDia);
     }
 
-    
+
     @Override
     public int getTipo() {
         return 0;

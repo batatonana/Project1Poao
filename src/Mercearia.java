@@ -1,12 +1,12 @@
 /**
- * Class Mercearia subclass from {@link #Empresa}
+ * Class Mercearia subclass from Empresa
  * Superclass of market type companies
  */
 public abstract class Mercearia extends Empresa {
     protected double custoLimpeza;
 
     /**
-     * Constructor for the class {@link #Mercearia}
+     * Constructor for the class Mercearia
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

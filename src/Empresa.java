@@ -4,10 +4,25 @@ import java.io.Serializable;
  * Superclass for all the companies managed by StarThrive
  */
 public abstract class Empresa implements Serializable {
+    /**
+     * Coordenadas coordenadas call
+     */
     protected Coordenadas coordenadas;
+    /**
+     * valid boolean flag
+     */
     protected boolean valid = true;
+    /**
+     * name of empresa
+     */
     protected String name;
+    /**
+     * distrito of empresa
+     */
     protected String distrito;
+    /**
+     * id of empresa
+     */
     protected int id;
 
     private static int maxId = 0;

@@ -8,7 +8,7 @@ public abstract class Restaurante extends Restauracao {
     protected double faturacaoMesa;
 
     /**
-     * Constructor for {@link #Restaurante}
+     * Constructor for Restaurante
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

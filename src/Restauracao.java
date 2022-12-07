@@ -8,7 +8,7 @@ public abstract class Restauracao extends Empresa {
     protected double salarioMedioAnual;
 
     /**
-     * Constructor for {@link #Restauracao}
+     * Constructor for Restauracao
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

@@ -7,7 +7,7 @@ public class Local extends Restaurante{
     private double licencaEsp;
 
     /**
-     * Cosntructor for the class {@link #Local}
+     * Cosntructor for the class Local
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

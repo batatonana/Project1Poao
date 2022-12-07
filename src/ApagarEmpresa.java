@@ -9,20 +9,54 @@ import java.awt.event.ActionListener;
  *Class os the GUI to edit and delete empresas
  */
 public class ApagarEmpresa extends JFrame {
-
+    /**
+     * Frame
+     */
     private JFrame frame;
+    /**
+     * Button actions
+     */
     private JButton apagar, voltar, editar;
+    /**
+     * Panel 
+     */
     private JPanel panelA, panelB, panelC, panelD;
+    /**
+     * List
+     */
     private JList lista;
+    /**
+     * ScrollPane
+     */
     private JScrollPane sp;
-
+    /**
+     * Fonte for titles
+     */
     private Font fonte = new Font("Arial", Font.BOLD, 25);
+    /**
+     * Foreground color
+     */
     private Color fgColor = new Color(10, 10, 10);
+    /**
+     * Background color
+     */
     private Color bgColor = new Color(100, 100, 150);
 
+    /**
+     * Creating a StarTrhrive object
+     */
     private StarThrive manager;
+    /**
+     * String[] dados method
+     */
     private String[] dados;
+    /**
+     * JLabel labels[] method
+     */
     private JLabel labels[];
+    /**
+     * JTextField textFields[] method
+     */
     private JTextField textFields[];
 
     /**

@@ -253,7 +253,7 @@ public class StarThrive implements Serializable{
     
     /**
      * Function main to run program
-     * @param args
+     * @param args main args
      */
     public static void main(String[] args) {
         StarThrive manager = new StarThrive();

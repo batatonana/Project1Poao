@@ -1,13 +1,13 @@
 /**
  * Class Pastelaria, 
- * Subclass form {@link #Restauracao}
+ * Subclass form Restauracao
  */
 public class Pastelaria extends Restauracao{
     private double boloVendidoDia;
     private double faturacaoAnualBolo;
 
     /**
-     * Constructor for the class {@link #Pastelaria}
+     * Constructor for the class Pastelaria
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

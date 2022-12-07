@@ -1,12 +1,18 @@
 /**
  * Class Frutaria,
- * Subclass from {@link #Mercearia}
+ * Subclass from Mercearia
  */
 public class Frutaria extends Mercearia{
+    /**
+     * produtos
+     */
     private int produtos;
+    /**
+     * faturacao produtos
+     */
     private double faturacaoProduto;
     /**
-     * Constructor for the class {@link #Frutaria}
+     * Constructor for the class Frutaria
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

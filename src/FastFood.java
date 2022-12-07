@@ -3,11 +3,17 @@
  * Subclass from Restaurante
  */
 public class FastFood extends Restaurante{
+    /**
+     * number of drive clients
+     */
     private double clientesDrive;
+    /**
+     * faturacao of drive clients
+     */
     private double faturacaoDrive;
 
     /**
-     * Constructor for the class {@link #FastFood}
+     * Constructor for the class FastFood
      * @param name the name of empresa
      * @param latitude the latitude of empresa
      * @param longitude the longitude of empresa

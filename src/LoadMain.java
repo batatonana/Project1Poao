@@ -20,7 +20,7 @@ public class LoadMain extends JFrame{
 
     /**
      * Class constructor to LoadMain
-     * @param manager 
+     * @param manager info from empresa
      */
     public LoadMain(StarThrive manager) {
         this.manager = manager;

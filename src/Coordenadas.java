@@ -3,8 +3,17 @@ import java.io.Serializable;
  * Class with the coordenadas
  */
 public class Coordenadas implements Serializable{
+    /**
+     * latitude of empresa
+     */
     private double latitude;
+    /**
+     * longitude of empresa
+     */
     private double longitude;
+    /**
+     * valid boolean flag
+     */
     private boolean valid = true;
 
     /**

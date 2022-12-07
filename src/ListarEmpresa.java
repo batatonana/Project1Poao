@@ -9,23 +9,51 @@ import java.awt.event.ActionListener;
  * Class to list empresas
  */
 public class ListarEmpresa extends JFrame {
-
+    /**
+     * Frame
+     */
     private JFrame frame;
+    /**
+     * Panels
+     */
     private JPanel panelA, panelB;
+    /**
+     * Button actions
+     */
     private JButton voltar, submit;
+    /**
+     * Fonte for titles
+     */
     private Font fonte = new Font("Arial", Font.BOLD, 30);
+    /**
+     * ComboBox
+     */
     private JComboBox dropdown;
 
+    /**
+     * Foreground color
+     */
     private Color fgColor = new Color(10, 10, 10);
+    /**
+     * Background color
+     */
     private Color bgColor = new Color(100, 100, 150);
+    /**
+     * Table
+     */
     private JTable table;
+    /**
+     * ScrollPane
+     */
     private JScrollPane sp;
-
-    // Creating a StarTrhrive object
+ 
+    /**
+     * Creating a StarTrhrive object
+     */
     private StarThrive manager;
     /**
      * Class constructor to list empresas
-     * @param manager
+     * @param manager info from empresa
      */
     public ListarEmpresa(StarThrive manager) {
         this.manager = manager;
