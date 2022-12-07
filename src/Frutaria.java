@@ -1,7 +1,20 @@
+/**
+ * Class Frutaria,
+ * Subclass from {@link #Mercearia}
+ */
 public class Frutaria extends Mercearia{
     private int produtos;
     private double faturacaoProduto;
-
+    /**
+     * Constructor for the class {@link #Frutaria}
+     * @param name
+     * @param latitude
+     * @param longitude
+     * @param distrito
+     * @param custoLimpeza
+     * @param produtos
+     * @param faturacaoProduto
+     */
     public Frutaria(String name, double latitude, double longitude, String distrito, double custoLimpeza, int produtos, double faturacaoProduto){
         super(name, latitude, longitude, distrito, custoLimpeza);
         setProdutos(produtos);
@@ -37,6 +50,10 @@ public class Frutaria extends Mercearia{
         }
     }
 
+    /**
+     * Setter for the average faturation per products sold
+     * @param faturacaoProduto
+     */
     public void setFaturacaoProduto(double faturacaoProduto) {
         if (faturacaoProduto < 0){
             setValid(false);
@@ -44,6 +61,10 @@ public class Frutaria extends Mercearia{
             this.faturacaoProduto = faturacaoProduto;
         }
     }
+    /**
+     * Setter for the average number of products sold per year
+     * @param produtos
+     */
     public void setProdutos(int produtos) {
         if(produtos < 0){
             setValid(false);
@@ -51,9 +72,17 @@ public class Frutaria extends Mercearia{
             this.produtos = produtos;
         }
     }
+    /**
+     * Getter for the average number of products sold per year
+     * @return average number of products sold per year
+     */
     public int getProdutos() {
         return produtos;
     }
+    /**
+     * Getter for the average faturation per products sold
+     * @return average faturation per products sold
+     */
     public double getFaturacaoProduto() {
         return faturacaoProduto;
     }

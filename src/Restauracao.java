@@ -14,7 +14,7 @@ public abstract class Restauracao extends Empresa {
         setSalarioMedioAnual(salarioMedioAnual);
     }
 
-
+    @Override
     public double despesaAnual() {
         return empregados * salarioMedioAnual;
     }
@@ -22,6 +22,16 @@ public abstract class Restauracao extends Empresa {
     @Override
     public double capacidadeClientes() {
         return clientesMedioDiario;
+    }
+
+    @Override
+    public int save(String[] data){
+        super.save(data);
+        setClientesMedioDiario(Double.parseDouble(data[3]));
+        setSalarioMedioAnual(Double.parseDouble(data[4]));
+        setEmpregados(Integer.parseInt(data[5]));
+        if(getValid()) return 0;
+        return -1;
     }
 
     public void setSalarioMedioAnual(double salarioMedioAnual) {
@@ -46,15 +56,7 @@ public abstract class Restauracao extends Empresa {
         }
     }
 
-    @Override
-    public int save(String[] data){
-        super.save(data);
-        setClientesMedioDiario(Double.parseDouble(data[3]));
-        setSalarioMedioAnual(Double.parseDouble(data[4]));
-        setEmpregados(Integer.parseInt(data[5]));
-        if(getValid()) return 0;
-        return -1;
-    }
+
 
     public double getClientesMedioDiario() {
         return clientesMedioDiario;

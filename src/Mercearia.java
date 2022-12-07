@@ -1,7 +1,18 @@
-
+/**
+ * Class Mercearia subclass from {@link #Empresa}
+ * Superclass of market type companies
+ */
 public abstract class Mercearia extends Empresa {
     protected double custoLimpeza;
 
+    /**
+     * Constructor for the class {@link #Mercearia}
+     * @param name
+     * @param latitude
+     * @param longitude
+     * @param distrito
+     * @param custoLimpeza
+     */
     public Mercearia(String name, double latitude, double longitude, String distrito, double custoLimpeza){
         super(name, latitude, longitude, distrito);
         setCustoLimpeza(custoLimpeza);
@@ -23,9 +34,11 @@ public abstract class Mercearia extends Empresa {
             return -1;
         }
     }
-    
-    public abstract double receitaAnual();
 
+    /**
+     * Setter for the custo de limpeza
+     * @param custoLimpeza
+     */
     public void setCustoLimpeza(double custoLimpeza) {
         if(custoLimpeza < 0){
             setValid(false);
@@ -33,6 +46,10 @@ public abstract class Mercearia extends Empresa {
         this.custoLimpeza = custoLimpeza;
         }
     }
+    /**
+     * Getter for the custo de limpeza
+     * @return custo de limpeza
+     */
     public double getCustoLimpeza() {
         return custoLimpeza;
     }

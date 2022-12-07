@@ -120,14 +120,19 @@ public class ApagarEmpresa extends JFrame {
             panelD.add(textFields[j - 2]);
         }
 
-        JLabel label = new JLabel();
+        JButton cancelar = new JButton("Cancelar");
+        cancelar.setFont(fonte);
+        cancelar.setForeground(fgColor);
+        cancelar.setBackground(bgColor);
+        cancelar.addActionListener(new ButtonListener());
+
         JButton confirmar = new JButton("Confirmar");
         confirmar.setFont(fonte);
         confirmar.setForeground(fgColor);
         confirmar.setBackground(bgColor);
         confirmar.addActionListener(new ButtonListener());
 
-        panelD.add(label);
+        panelD.add(cancelar);
         panelD.add(confirmar);
 
         panelA.add(panelD);
@@ -169,6 +174,11 @@ public class ApagarEmpresa extends JFrame {
                         editLayout(lista.getSelectedIndex());
                     }
                     break;
+                case "Cancelar":
+                    panelA.remove(panelD);
+                    panelA.add(panelB);
+                    apagar();
+                    break;
                 case "Confirmar":
                     dados = new String[textFields.length];
                     int i = 0;
@@ -179,9 +189,11 @@ public class ApagarEmpresa extends JFrame {
                     if(manager.get(lista.getSelectedIndex()).save(dados) == 0){
                         panelA.remove(panelD);
                         panelA.add(panelB);
-                        JOptionPane.showMessageDialog(null, "Empresa modificado com sucesso", "empresa modificada",
-                                        JOptionPane.YES_OPTION);
                         apagar();
+                    }else{
+                        JOptionPane.showMessageDialog(null, "Erro ao modificar empresa", "Erro",
+                                        JOptionPane.YES_OPTION);
+                        manager.get(lista.getSelectedIndex()).setValid(true);
                     }
                     break;
             }

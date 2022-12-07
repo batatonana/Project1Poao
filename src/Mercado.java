@@ -1,8 +1,22 @@
+/**
+ * Class Mercado,
+ * Subclass form {@link #Mercearia}
+ */
 public class Mercado extends Mercearia{
     private String type;
     private double area;
     private double faturacaoArea;
-
+    /**
+     * Constructor for the class {@link #Mercado}
+     * @param name
+     * @param latitude
+     * @param longitude
+     * @param distrito
+     * @param custoLimpeza
+     * @param type
+     * @param area
+     * @param faturacaoArea
+     */
     public Mercado(String name, double latitude, double longitude, String distrito, double custoLimpeza, String type, double area, double faturacaoArea){
         super(name, latitude, longitude, distrito, custoLimpeza);
         setArea(area);
@@ -40,6 +54,10 @@ public class Mercado extends Mercearia{
         }
     }
 
+    /**
+     * Setter for the type of market
+     * @param type
+     */
     public void setType(String type) {
         if(type.equals("Mini") || type.equals("Super") || type.equals("Hiper")){
             this.type = type;
@@ -47,6 +65,10 @@ public class Mercado extends Mercearia{
             setValid(false);
         }
     }
+    /**
+     * Setter for the area
+     * @param area
+     */
     public void setArea(double area) {
         if(area < 0){
             setValid(false);
@@ -54,6 +76,10 @@ public class Mercado extends Mercearia{
         this.area = area;
         }
     }
+    /**
+     * Setter for the average faturation for meter squared
+     * @param faturacaoArea
+     */
     public void setFaturacaoArea(double faturacaoArea) {
         if(faturacaoArea < 0){
             setValid(false);
@@ -61,13 +87,24 @@ public class Mercado extends Mercearia{
             this.faturacaoArea = faturacaoArea;
         }
     }
-
+    /**
+     * Getter for the type of market
+     * @return type of market
+     */
     public String gettype() {
         return type;
     }
+    /**
+     * Getter for the area
+     * @return area
+     */
     public double getFaturacaoArea() {
         return faturacaoArea;
     }
+    /**
+     * Getter for the average faturation for meter squared
+     * @return average faturation for meter squared
+     */
     public double getArea() {
         return area;
     }

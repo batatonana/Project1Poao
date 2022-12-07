@@ -9,11 +9,19 @@ public abstract class Empresa implements Serializable {
     protected boolean valid = true;
     protected String name;
     protected String distrito;
+    
     /**
      * Variable to store the number of "empresas" created 
      */
     static private int created = 0;
 
+    /**
+     * Class constructor
+     * @param name
+     * @param latitude
+     * @param longitude
+     * @param distrito
+     */
     public Empresa(String name, double latitude, double longitude, String distrito){
         id = created;
         created += 1;
@@ -22,11 +30,43 @@ public abstract class Empresa implements Serializable {
         setCoordenadas(latitude, longitude);
     }
 
+    /**
+     * Method used on exercice 2 to get the type of each class
+     * @return
+     */
     public abstract int getTipo();
+
+    /**
+     * Method that returns the anual expenses
+     * @return anual expenses
+     */
     public abstract double despesaAnual();
+
+    /**
+     * Methos that returns the anual faturation
+     * @return anual faturation
+     */
     public abstract double receitaAnual();
+
+    /**
+     * Method used calculate the anual profit
+     * @return anual profit
+     */
+    public double lucroAnual(){
+        return (receitaAnual() - despesaAnual());
+    }
+
+    /**
+     * Method that return some data to be displayed in the GUI 
+     * @return
+     */
     public abstract String[] toTable();
 
+    /**
+     * Method used to update the data of each empresa
+     * @param array of data
+     * @return 0 if successful, -1 if not
+     */
     public int save(String[] data){
         try {
             setName(data[0]);
@@ -43,18 +83,31 @@ public abstract class Empresa implements Serializable {
         }
     }
 
+    /**
+     * Method used to return the "empresas" with the mos client capacity
+     * @return number of client capcity
+     */
     public double capacidadeClientes(){
         return -1;
     }
 
-    public double lucroAnual(){
-        return (receitaAnual() - despesaAnual());
-    }
-
-
+    /**
+     * Setter for the name accepts any name greaetd than 1
+     * @param name
+     */
     public void setName(String name) {
-        this.name = name;
+        if(name != null && name.length()>1){
+            this.name = name;
+        }else{
+            setValid(false);
+        }
     }
+    
+    /**
+     * Creates an instance of the class coordenadas is the params are valid
+     * @param latitude
+     * @param longitude
+     */
     public void setCoordenadas(double latitude, double longitude) {
         Coordenadas coordenadasAux = new Coordenadas(latitude, longitude);
         if(coordenadasAux.getValid()){
@@ -63,6 +116,11 @@ public abstract class Empresa implements Serializable {
             this.setValid(false);
         }  
     }
+    
+    /**
+     * Setter for distrito, accepts any name started with uppercase
+     * @param distrito
+     */
     public void setDistrito(String distrito) {
         if(distrito.charAt(0)>= 'Z' || distrito.charAt(0) <= 'A'){
             this.setValid(false);
@@ -70,24 +128,49 @@ public abstract class Empresa implements Serializable {
             this.distrito = distrito;
         }
     }
+    
+    /**
+     * Setter for valid, this attribute dertemines if the object is valid or not
+     */
     public void setValid(boolean valid) {
         this.valid = valid;
     }
 
+    /**
+     * Getter for coordenadas
+     * @return coordenadas
+     */
     public Coordenadas getCoordenadas() {
         return coordenadas;
     }
+    
+    /**
+     * Getter for distrito
+     * @return distrito
+     */
     public String getDistrito() {
         return distrito;
     }
+    
+    /**
+     * Getter for name
+     * @return name
+     */
     public String getName() {
         return name;
     }
+    
+    /**
+     * getter for the attribute valid
+     * @return valid
+     */
     public boolean getValid() {
         return valid;
     }
     
-
+    /**
+     * Method used to return the class isntance as a string
+     */
     public String toString() {
         return "ID: " + id + "\nNome: " + name + "\nDistrito: " + distrito + "\n" + coordenadas;
     }

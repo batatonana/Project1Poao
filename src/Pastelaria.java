@@ -1,8 +1,23 @@
-
+/**
+ * Class Pastelaria, 
+ * Subclass form {@link #Restauracao}
+ */
 public class Pastelaria extends Restauracao{
     private double boloVendidoDia;
     private double faturacaoAnualBolo;
 
+    /**
+     * Constructor for the class {@link #Pastelaria}
+     * @param name
+     * @param latitude
+     * @param longitude
+     * @param distrito
+     * @param empregados
+     * @param salarioMedioAnual
+     * @param clientesMedioDiario
+     * @param cafeVendidoDia
+     * @param faturacaoAnualBolo
+     */
     public Pastelaria(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario, double cafeVendidoDia, double faturacaoAnualBolo){
         super(name, latitude, longitude, distrito, empregados, salarioMedioAnual, clientesMedioDiario);
         setBoloVendidoDia(cafeVendidoDia);
@@ -25,21 +40,6 @@ public class Pastelaria extends Restauracao{
         return data;
     }
 
-    public void setFaturacaoAnualBolo(double faturacaoAnualBolo) {
-        if(faturacaoAnualBolo < 0){
-            setValid(false);
-        }else{
-        this.faturacaoAnualBolo = faturacaoAnualBolo;
-        }
-    }
-    public void setBoloVendidoDia(double boloVendidoDia) {
-        if(boloVendidoDia < 0){
-            setValid(false);
-        }else{
-            this.boloVendidoDia = boloVendidoDia;
-        }
-    }
-
     @Override
     public int save(String[] data) {
         super.save(data);
@@ -49,9 +49,41 @@ public class Pastelaria extends Restauracao{
         return -1;
     }
 
+    /**
+     * Setter for the anual faturation per cake sold per day
+     * @param faturacaoAnualBolo
+     */
+    public void setFaturacaoAnualBolo(double faturacaoAnualBolo) {
+        if(faturacaoAnualBolo < 0){
+            setValid(false);
+        }else{
+        this.faturacaoAnualBolo = faturacaoAnualBolo;
+        }
+    }
+    
+    /**
+     * Setter for the average of cakes sold per day
+     * @param boloVendidoDia
+     */
+    public void setBoloVendidoDia(double boloVendidoDia) {
+        if(boloVendidoDia < 0){
+            setValid(false);
+        }else{
+            this.boloVendidoDia = boloVendidoDia;
+        }
+    }
+
+    /**
+     * Getter for the anual faturation per cake sold per day
+     * @return anual faturation per cake sold per day
+     */
     public double getFaturacaoAnualBolo() {
         return faturacaoAnualBolo;
     }
+    /**
+     * Getter for the average of cakes sold per day
+     * @return average of cakes sold per day
+     */
     public double getBoloVendidoDia() {
         return boloVendidoDia;
     }

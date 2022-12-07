@@ -1,21 +1,40 @@
 import java.io.*;
 import java.util.ArrayList;
 /**
- * Class where the main function is run
+ * Class where the main fucntion is called
+ * The "empresas" ArrayList is created in this class
+ * 
  * @author Frederico Ferriera 2021217116; Telmo Correia 2019224775 
+ * @version 1.0.0
  */
 public class StarThrive implements Serializable{
-    //Array for all the "Empresas"
+
+    /**
+     * ArrayList for all the "empresas" 
+     */
     private ArrayList<Empresa> empresas = new ArrayList<Empresa>();
 
-    public Empresa get(int index){
-        return empresas.get(index);
-    }
-
+    /**
+     * Constructor responsable for loading data form files into {@link #empresas}
+     */
     public StarThrive(){
         readObjFile();
     }
 
+    /**
+     * Method that returns the empresa in a specific index
+     * @param index
+     * @return empresa in the index
+     */
+    public Empresa get(int index){
+        return empresas.get(index);
+    }
+
+    /**
+     * Method that deletes the empresa in a specifici index
+     * @param index
+     * @return 0 if succesfull, -1 if not
+     */
     public int delete(int index){
         try {
             empresas.remove(index);
@@ -38,6 +57,10 @@ public class StarThrive implements Serializable{
         }
     }
 
+    /**
+     * Mehtod that puts together data to be displayed by the GUI
+     * @return an array of an array of strings with data form the empresa
+     */
     public String[][] data(){
         String[][] data = new String[empresas.size()][6];
         int i = 0;
@@ -48,6 +71,10 @@ public class StarThrive implements Serializable{
         return data;
     }
 
+    /**
+     * Mehtod that returns the 2 biggest restaurants in terms of client capacity
+     * @return an array of an array of strings with data form 2 restaaurants
+     */
     public String[][] clientes(){
         String data[][] = new String[2][7];
         Empresa maior = empresas.get(0);
@@ -79,6 +106,11 @@ public class StarThrive implements Serializable{
         return data;
     }
 
+    /**
+     * Mehtod that returns the empresa with the biggest lucro, receita and the smaller despesa depending ont the mode
+     * @param mode
+     * @return an array of an array of strings with data form empresa with the better stats of each tipe
+     */
     public String[][] stats(int mode){
         String[][] data = new String[6][3];
         data[0][1] = "Cafe";
@@ -194,7 +226,7 @@ public class StarThrive implements Serializable{
     }
 
     /**
-     * Function to data from the .obj file.
+     * Function to read data from the .obj file.
      * If object file is not found calls the function {@link #readFile()}
      */
     public void readObjFile(){
