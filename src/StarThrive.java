@@ -50,10 +50,14 @@ public class StarThrive implements Serializable{
      * @param empresa
      */
     public void add(Empresa empresa){
-        if(empresa.getValid()){
-            empresas.add(empresa);
-        }else{
-            System.out.println(">>>>>>>>>>INFORMACAO INVALIDA<<<<<<<<<<");
+        try {
+            if(empresa.getValid()){
+                empresas.add(empresa);
+            }else{
+                System.out.println(">>>>>>>>>>INFORMACAO INVALIDA<<<<<<<<<<");
+            }
+        } catch (Exception e) {
+            System.out.println("Erro ao ler ficheiro");
         }
     }
 

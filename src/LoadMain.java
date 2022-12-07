@@ -95,7 +95,7 @@ public class LoadMain extends JFrame{
                 case "Adicionar empresa":
                     frame.setVisible(false);
                     frame.dispose();
-                    new AddEmpresa(empresa);
+                    new AddEmpresa(manager, empresa);
                     break;
                 case "Editar ou Apagar empresa":
                     frame.setVisible(false);

@@ -8,6 +8,9 @@ public abstract class Empresa implements Serializable {
     protected boolean valid = true;
     protected String name;
     protected String distrito;
+    protected int id;
+
+    private static int maxId = 0;
 
     /**
      * Class constructor
@@ -20,6 +23,8 @@ public abstract class Empresa implements Serializable {
         setName(name);
         setDistrito(distrito);
         setCoordenadas(latitude, longitude);
+        maxId +=1;
+        id = maxId;
     }
 
     /**
@@ -63,7 +68,8 @@ public abstract class Empresa implements Serializable {
         try {
             setName(data[0]);
             setDistrito(data[1]);
-            setCoordenadas(Double.parseDouble(data[2].replaceAll("()", "").split(",")[0]), Double.parseDouble(data[2].replaceAll("()", "").split(",")[1]));
+            String[] aux = {data[2].replace("(", "").replace(")", "").split(",")[0],data[2].replace("(", "").replace(")", "").split(",")[1]};
+            setCoordenadas(Double.parseDouble(aux[0]), Double.parseDouble(aux[1]));
             if(getValid()){
                 return 0;
             }   

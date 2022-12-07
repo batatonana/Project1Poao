@@ -42,11 +42,16 @@ public class Pastelaria extends Restauracao{
 
     @Override
     public int save(String[] data) {
-        super.save(data);
-        setBoloVendidoDia(Double.parseDouble(data[6]));
-        setFaturacaoAnualBolo(Double.parseDouble(data[7]));
-        if(getValid()) return 0;
-        return -1;
+        try{
+            super.save(data);
+            setBoloVendidoDia(Double.parseDouble(data[6]));
+            setFaturacaoAnualBolo(Double.parseDouble(data[7]));
+            if(getValid()) return 0;
+            return -1;
+        }
+catch(Exception e){
+            return -1;
+        }
     }
 
     /**
