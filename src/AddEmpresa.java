@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
 
 public class AddEmpresa extends JFrame {
 
@@ -17,13 +16,14 @@ public class AddEmpresa extends JFrame {
     private JTextField nome, lon, lat, dist;
     private JTextField nomeCafe1, nomeCafe2, nomeCafe3, nomeCafe4;
     private JTextField nomeRest1, nomeRest2, nomeRest3, nomeDrive1, nomeDrive2, nomeLocal1, nomeLocal2;
-    private JTextField nomeMerc1, nomeMerc2, nomeMerc3, nomeMerc4, nomeMerc5;
+    private JTextField nomeMerc1, nomeMerc2, nomeMerc3, nomeMerc4;
+    private JTextField nomeFrut1, nomeFrut2;
     private JLabel labelCafe1, labelCafe2, labelCafe3, labelCafe4;
     private JLabel labelRest1, labelRest2, labelRest3, labelDrive1, labelDrive2, labelLocal1, labelLocal2;
-    private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4, labelMerc5;
+    private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4;
+    private JLabel labelFrut1, labelFrut2;
 
     private JRadioButton rb1, rb2, rb3, rb4, rb5, rb6;
-    private JButton b;
 
     private Font fonte = new Font("Arial", Font.BOLD, 25);
     private Font fonte1 = new Font("Arial", Font.BOLD, 20);
@@ -299,7 +299,7 @@ public class AddEmpresa extends JFrame {
         labelMerc2.setFont(fonte1);
 
         nomeMerc2 = new JTextField();
-        nomeMerc2.setBounds(640, 300, 50, 40);
+        nomeMerc2.setBounds(640, 300, 70, 40);
 
         labelMerc3 = new JLabel("Area");
         labelMerc3.setBounds(100, 400, 210, 40);
@@ -333,6 +333,30 @@ public class AddEmpresa extends JFrame {
         panel.add(labelMerc4);
         panel.add(nomeMerc4);
 
+        //componentes Frutaria
+        labelFrut1 = new JLabel("Produtos vendidos");
+        labelFrut1.setBounds(100, 400, 250, 40);
+        labelFrut1.setFont(fonte1);
+
+        nomeFrut1 = new JTextField();
+        nomeFrut1.setBounds(330, 400, 50, 40);
+
+        labelFrut2 = new JLabel("Faturacao por produto");
+        labelFrut2.setBounds(400, 300, 300, 40);
+        labelFrut2.setFont(fonte1);
+
+        nomeFrut2 = new JTextField();
+        nomeFrut2.setBounds(700, 300, 70, 40);
+
+        labelFrut1.setVisible(false);
+        nomeFrut1.setVisible(false);
+        labelFrut2.setVisible(false);
+        nomeFrut2.setVisible(false);
+
+        panel.add(labelFrut1);
+        panel.add(nomeFrut1);
+        panel.add(labelFrut2);
+        panel.add(nomeFrut2);
         return panel;
     }
 
@@ -378,6 +402,11 @@ public class AddEmpresa extends JFrame {
                 nomeMerc3.setVisible(false);
                 labelMerc4.setVisible(false);
                 nomeMerc4.setVisible(false);
+                //
+                labelFrut1.setVisible(false);
+                nomeFrut1.setVisible(false);
+                labelFrut2.setVisible(false);
+                nomeFrut2.setVisible(false);
 
                 frame.repaint();
 
@@ -418,6 +447,11 @@ public class AddEmpresa extends JFrame {
                 nomeMerc3.setVisible(false);
                 labelMerc4.setVisible(false);
                 nomeMerc4.setVisible(false);
+
+                labelFrut1.setVisible(false);
+                nomeFrut1.setVisible(false);
+                labelFrut2.setVisible(false);
+                nomeFrut2.setVisible(false);
 
                 frame.repaint();
 
@@ -460,6 +494,11 @@ public class AddEmpresa extends JFrame {
                 labelMerc4.setVisible(false);
                 nomeMerc4.setVisible(false);
 
+                labelFrut1.setVisible(false);
+                nomeFrut1.setVisible(false);
+                labelFrut2.setVisible(false);
+                nomeFrut2.setVisible(false);
+
                 frame.repaint();
 
             } else if (button == rb4) {
@@ -501,6 +540,11 @@ public class AddEmpresa extends JFrame {
                 labelMerc4.setVisible(false);
                 nomeMerc4.setVisible(false);
 
+                labelFrut1.setVisible(false);
+                nomeFrut1.setVisible(false);
+                labelFrut2.setVisible(false);
+                nomeFrut2.setVisible(false);
+
                 frame.repaint();
 
             } else if (button == rb5) {
@@ -540,6 +584,11 @@ public class AddEmpresa extends JFrame {
                 nomeMerc3.setVisible(false);
                 labelMerc4.setVisible(false);
                 nomeMerc4.setVisible(false);
+
+                labelFrut1.setVisible(true);
+                nomeFrut1.setVisible(true);
+                labelFrut2.setVisible(true);
+                nomeFrut2.setVisible(true);
 
                 frame.repaint();
 
@@ -581,6 +630,11 @@ public class AddEmpresa extends JFrame {
                 labelMerc4.setVisible(true);
                 nomeMerc4.setVisible(true);
 
+                labelFrut1.setVisible(false);
+                nomeFrut1.setVisible(false);
+                labelFrut2.setVisible(false);
+                nomeFrut2.setVisible(false);
+
                 frame.repaint();
 
             }
@@ -619,18 +673,29 @@ public class AddEmpresa extends JFrame {
                                 break;
                             case "local":
                                 empresa = new Local(nome.getText(), Double.parseDouble(lat.getText()),
-                                        Double.parseDouble(lon.getText()), dist.getText(), Integer.parseInt(nomeCafe1.getText()), Double.parseDouble(nomeCafe2.getText()),
-                                        Double.parseDouble(nomeCafe3.getText()), Integer.parseInt(nomeRest1.getText()), ERROR, ALLBITS, ABORT);
+                                        Double.parseDouble(lon.getText()), dist.getText(),
+                                        Integer.parseInt(nomeCafe1.getText()), Double.parseDouble(nomeCafe2.getText()),
+                                        Double.parseDouble(nomeCafe3.getText()), Integer.parseInt(nomeRest1.getText()),
+                                        Integer.parseInt(nomeRest2.getText()), Double.parseDouble(nomeRest3.getText()),
+                                        Integer.parseInt(nomeLocal1.getText()),
+                                        Double.parseDouble(nomeLocal2.getText()));
                                 break;
                             case "fastFood":
-                                empresa = new FastFood(cmd, DO_NOTHING_ON_CLOSE, DISPOSE_ON_CLOSE, cmd, WIDTH, SOMEBITS,
-                                        PROPERTIES, HEIGHT, FRAMEBITS, ERROR, ALLBITS, ABORT);
+                                empresa = new FastFood(nome.getText(), Double.parseDouble(lat.getText()),
+                                        Double.parseDouble(lon.getText()), dist.getText(),
+                                        Integer.parseInt(nomeCafe1.getText()), Double.parseDouble(nomeCafe2.getText()),
+                                        Double.parseDouble(nomeCafe3.getText()), Integer.parseInt(nomeRest1.getText()),
+                                        Integer.parseInt(nomeRest2.getText()), Double.parseDouble(nomeRest3.getText()),
+                                        Double.parseDouble(nomeDrive1.getText()),
+                                        Double.parseDouble(nomeDrive2.getText()));
                                 break;
                             case "frutaria":
-                                empresa = new Frutaria(cmd, HEIGHT, FRAMEBITS, cmd, ERROR, ALLBITS, ABORT);
+                                empresa = new Frutaria(nome.getText(), Double.parseDouble(lat.getText()),
+                                            Double.parseDouble(lon.getText()), dist.getText(), Double.parseDouble(nomeMerc1.getText()), Integer.parseInt(nomeFrut1.getText()), Double.parseDouble(nomeFrut2.getName()));
                                 break;
                             case "mercado":
-                                empresa = new Mercado(cmd, HEIGHT, FRAMEBITS, cmd, ERROR, cmd, ALLBITS, ABORT);
+                                empresa = new Mercado(nome.getText(), Double.parseDouble(lat.getText()),
+                                            Double.parseDouble(lon.getText()),dist.getText(), Double.parseDouble(nomeMerc1.getText()), nomeMerc2.getText(), Double.parseDouble(nomeMerc3.getText()), Double.parseDouble(nomeMerc4.getText()));
                                 break;
 
                         }
