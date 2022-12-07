@@ -27,7 +27,7 @@ public class ApagarEmpresa extends JFrame {
 
     /**
      * Class constructor to edit and delete empresas
-     * @param manager
+     * @param manager info from empresa
      */
     public ApagarEmpresa(StarThrive manager) {
         this.manager = manager;

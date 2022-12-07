@@ -23,7 +23,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Method that returns the empresa in a specific index
-     * @param index 
+     * @param index the empresa id
      * @return empresa in the index
      */
     public Empresa get(int index){
@@ -32,7 +32,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Method that deletes the empresa in a specifici index
-     * @param index 
+     * @param index the empresa id
      * @return 0 if succesfull, -1 if not
      */
     public int delete(int index){
@@ -47,7 +47,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Function to add "Empresas" to the array list
-     * @param empresa
+     * @param empresa all info from empresa
      */
     public void add(Empresa empresa){
         try {
@@ -112,7 +112,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Mehtod that returns the empresa with the biggest lucro, receita and the smaller despesa depending ont the mode
-     * @param mode
+     * @param mode the mode
      * @return an array of an array of strings with data form empresa with the better stats of each tipe
      */
     public String[][] stats(int mode){

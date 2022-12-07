@@ -35,8 +35,8 @@ public class AddEmpresa extends JFrame {
     private StarThrive manager;
     /**
      * Class constructor to add empresas
-     * @param manager
-     * @param empresa
+     * @param manager info from empresa
+     * @param empresa info from empresa
      */
     public AddEmpresa(StarThrive manager, Empresa empresa) {
         this.manager = manager;

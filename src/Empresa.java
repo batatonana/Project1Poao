@@ -29,7 +29,7 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Method used on exercice 2 to get the type of each class
-     * @return
+     * @return tipo
      */
     public abstract int getTipo();
 
@@ -55,13 +55,13 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Method that return some data to be displayed in the GUI 
-     * @return
+     * @return data to be displayed in the GUI
      */
     public abstract String[] toTable();
 
     /**
      * Method used to update the data of each empresa
-     * @param array of data
+     * @param data array of data
      * @return 0 if successful, -1 if not
      */
     public int save(String[] data){
@@ -129,6 +129,7 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Setter for valid, this attribute dertemines if the object is valid or not
+     * @param valid boolean
      */
     public void setValid(boolean valid) {
         this.valid = valid;
