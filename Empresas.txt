@@ -8,21 +8,21 @@
 1;Cacau Negro;19;-15;Algarve;15;980;6500;9000;250
 1;Pastelaria Fatima;10;-10;Coimbra;4;3500;1200;3200;590
 1;Doce da Ria;-18;10;Aveiro;5;1190;1150;4900;400
-2;McDonal10;-19;-10;Coimbra;10;10;40;300;10;10;10;10
-2;McDonal11;-19;-10;Coimbra;10;10;40;300;10;10;10;10
-2;McDonal12;-19;-10;Coimbra;10;10;40;300;10;10;10;10
-2;McDonal13;-19;-10;Coimbra;10;10;40;300;10;10;10;10
-2;McDonal14;-19;-10;Coimbra;10;10;40;300;10;10;10;10
-3;McDonal15;10;10;Distrito;10;10;10;10;10;10;10;10
-3;McDonal16;10;10;Distrito;10;10;10;10;10;10;10;10
-3;McDonal17;10;10;Distrito;10;10;10;10;10;10;10;10
-3;McDonal18;10;10;Distrito;10;10;10;10;10;10;10;10
-3;McDonal19;10;10;Distrito;10;10;10;10;10;10;10;10
-4;McDonal20;-10;-10;Sitio;10;10;20
-4;McDonal21;-10;-10;Sitio;10;10;20
-4;McDonal22;-10;-10;Sitio;10;10;20
-4;McDonal23;-10;-10;Sitio;10;10;20
-4;McDonal24;-10;-10;Sitio;10;10;20
+2;Forno da Mimi;15;38;Coimbra;10;1100;40;300;25;20;11;100
+2;Pateo;17;40;Coimbra;15;1080;40;300;90;35;12;120
+2;Recanto;12;41;Coimbra;8;1209;40;300;35;38;100;9
+2;Pharmacia;43;44;Coimbra;13;1340;49;300;25;40;10;80
+2;Santa Cruz;90;37;Coimbra;12;999;70;300;30;36;15;130
+3;McDonald;10;10;Coimbra;10;1100;40;300;25;20;11;100
+3;QFC;10;110;Algarve;12;1080;40;300;90;35;12;120
+3;Kebab;12;10;Aveiro;4;1209;40;300;35;38;100;9
+3;BurgerRei;10;120;Aveiro;13;1340;49;300;25;40;10;80
+3;PizzaNut;10;10;Algarve;12;999;70;300;30;36;15;130
+4;Rei da Fruta;-53.234;5.13;Coimbra;9;5342;1.345
+4;Presidente da Fruta;-43.1234;43.42;Coimbra;6;432;2.0
+4;Czar da Fruta;5.432;10.134;Coimbra;8;543;2.5
+4;Imperador da Fruta;-3.431;-165.13;Coimbra;3;4321;1.84
+4;Shaike da Fruta;76.43;-180;Coimbra;4;4316;1.76
 5;Ilhas;-11;1;Castelo Branco;5234;Mini;500;1.45
 5;LEDL;-10.1232;1.5223;Guarda;5234.12;Mini;300;1.76
 5;Pingo Amargo;-14.452;8.2345;Porto;1341.54;Mini;250;1.99
