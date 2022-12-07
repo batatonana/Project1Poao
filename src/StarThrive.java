@@ -192,6 +192,7 @@ public class StarThrive implements Serializable{
                 if(l.charAt(0) >= '0' && l.charAt(0)<='5'){
                     type = Integer.parseInt(l.substring(0, 1));
                     String[] attributes = l.split(";", 0);
+                    try{
                     switch (type) {
                         case 0:
                             empresa = new Cafe(attributes[1], Double.parseDouble(attributes[2]), Double.parseDouble(attributes[3]), attributes[4], Integer.parseInt(attributes[5]), Double.parseDouble(attributes[6]), Double.parseDouble(attributes[7]), Double.parseDouble(attributes[8]), Double.parseDouble(attributes[9]));
@@ -217,6 +218,8 @@ public class StarThrive implements Serializable{
                             empresa = new Mercado(attributes[1], Double.parseDouble(attributes[2]), Double.parseDouble(attributes[3]), attributes[4], Double.parseDouble(attributes[5]), attributes[6], Double.parseDouble(attributes[7]), Double.parseDouble(attributes[8]));
                             add(empresa);
                             break;
+                    }}catch(Exception e){
+                        System.out.println("Error Reading a line");
                     }
                 }
             }
