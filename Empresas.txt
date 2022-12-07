@@ -1,13 +1,13 @@
-0;McDonal0;-10;-10;Leiria;10;1200;23;4000;400
-0;McDonal1;-10;-10;Leiria;10;12001;1200;4000;400
-0;McDonal2;-10;-10;Leiria;10;12000;1200;4000;400
-0;McDonal3;-10;-10;Leiria;10;12000;1200;4000;400
-0;McDonal4;-10;-10;Leiria;10;12000;1200;4000;400
-1;McDonal5;-18;-10;Leiria;10;1200;1200;4000;400
-1;McDonal6;-18;-10;Leiria;10;12001;1200;4000;400
-1;McDonal7;-18;-10;Leiria;10;12000;1201;4000;400
-1;McDonal8;-18;-10;Leiria;10;12000;1200;4000;400
-1;McDonal9;-18;-10;Leiria;10;12000;1200;4000;400
+0;Cafe Angola;-12;10;Madeira;5;1200;1000;4000;400
+0;Cafe Brasil;10;-110;Leiria;7;1100;1200;5000;450
+0;Cafe Timor;10;103;Viseu;10;900;1200;6500;420
+0;Cafe 245;-65;0;Mafra;11;850;1200;3500;550
+0;Cafe da Esquina;-10;-10;Lisboa;9;1150;1200;4800;500
+1;CheeseCake;-18;-100;Porto;7;1200;1000;4000;400
+1;Bolo Doce;-18;160;Fatima;10;1500;1200;3000;370
+1;Cacau Negro;19;-15;Algarve;15;980;6500;9000;250
+1;Pastelaria Fatima;10;-10;Coimbra;4;3500;1200;3200;590
+1;Doce da Ria;-18;10;Aveiro;5;1190;1150;4900;400
 2;McDonal10;-19;-10;Coimbra;10;10;40;300;10;10;10;10
 2;McDonal11;-19;-10;Coimbra;10;10;40;300;10;10;10;10
 2;McDonal12;-19;-10;Coimbra;10;10;40;300;10;10;10;10
@@ -23,8 +23,8 @@
 4;McDonal22;-10;-10;Sitio;10;10;20
 4;McDonal23;-10;-10;Sitio;10;10;20
 4;McDonal24;-10;-10;Sitio;10;10;20
-5;McDonal25;-10;1;Null;10;Mini;10;10
-5;McDonal26;-10;1;Null;10;Mini;10;1
-5;McDonal27;-10;1;Null;10;Mini;10;7
-5;McDonal28;-10;1;Null;10;Hiper;10;80
-5;McDonal29;-10;1;Null;10;Super;10;90
+5;Ilhas;-11;1;Castelo Branco;5234;Mini;500;1.45
+5;LEDL;-10.1232;1.5223;Guarda;5234.12;Mini;300;1.76
+5;Pingo Amargo;-14.452;8.2345;Porto;1341.54;Mini;250;1.99
+5;MarcroPreco;-20.3242;16.6643;Braga;9834.41;Hiper;200;2.90
+5;InterMarco;-35.523;43.532;Braganca;87134.12;Super;240;3.43

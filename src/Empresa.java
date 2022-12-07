@@ -135,7 +135,7 @@ public abstract class Empresa implements Serializable {
      * @param distrito the distrito of empresa
      */
     public void setDistrito(String distrito) {
-        if(distrito.charAt(0)>= 'Z' || distrito.charAt(0) <= 'A'){
+        if(distrito.charAt(0)> 'Z' || distrito.charAt(0) < 'A'){
             this.setValid(false);
         }else{
             this.distrito = distrito;
