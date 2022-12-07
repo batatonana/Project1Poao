@@ -3,8 +3,17 @@
  * Subclass of Restaurancao
  */
 public abstract class Restaurante extends Restauracao {
+    /**
+     * dias de funcionamento
+     */
     protected int diasEmFuncionamento;
+    /**
+     * number of mesas
+     */
     protected int mesasInt;
+    /**
+     * alues of faturacao por mesa
+     */
     protected double faturacaoMesa;
 
     /**

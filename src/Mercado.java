@@ -3,8 +3,17 @@
  * Subclass form Mercearia
  */
 public class Mercado extends Mercearia{
+    /**
+     * type of mercado
+     */
     private String type;
+    /**
+     * area of empresa
+     */
     private double area;
+    /**
+     * faturacao por area 
+     */
     private double faturacaoArea;
     /**
      * Constructor for the class Mercado

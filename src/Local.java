@@ -3,7 +3,13 @@
  * Subclass from Restaurante
  */
 public class Local extends Restaurante{
+    /**
+     * number of mesas esplanada
+     */
     private int mesasEsp;
+    /**
+     * values of licensa esplanada
+     */
     private double licencaEsp;
 
     /**

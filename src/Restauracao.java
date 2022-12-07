@@ -3,8 +3,17 @@
  * This class is a subclass of the class "Empresa"
  */
 public abstract class Restauracao extends Empresa {
+    /**
+     * number of empregados
+     */
     protected int empregados;
+    /**
+     * values of salario medio anual
+     */
     protected double clientesMedioDiario;
+    /**
+     * number of clientes medio diario
+     */
     protected double salarioMedioAnual;
 
     /**

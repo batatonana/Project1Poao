@@ -3,6 +3,9 @@
  * Superclass of market type companies
  */
 public abstract class Mercearia extends Empresa {
+    /**
+     * custo limpeza
+     */
     protected double custoLimpeza;
 
     /**

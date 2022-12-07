@@ -3,7 +3,13 @@
  * Subclass form Restauracao
  */
 public class Pastelaria extends Restauracao{
+    /**
+     * number of bolos vendidos por dia
+     */
     private double boloVendidoDia;
+    /**
+     * faturacao anual por bolo
+     */
     private double faturacaoAnualBolo;
 
     /**

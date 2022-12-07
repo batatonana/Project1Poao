@@ -8,14 +8,37 @@ import java.awt.event.*;
  * Main GUI class
  */
 public class LoadMain extends JFrame{
-
+    /**
+     * panel
+     */
     private JPanel panelA;
+    /**
+     * frame
+     */
     private JFrame frame;
+    /**
+     * button options
+     */
     private JButton botao1, botao2, botao3;
+    /**
+     * Fonte for titles
+     */
     private Font fonte = new Font("Arial", Font.BOLD, 25);
+    /**
+     * Foreground color
+     */
     private Color fgColor = new Color(10, 10, 10);
+    /**
+     * Background color
+     */
     private Color bgColor = new Color(100, 100, 150);
+    /**
+     * Empresa empresa call
+     */
     private Empresa empresa;
+    /**
+     * Creating a StarTrhrive object
+     */
     private StarThrive manager;
 
     /**
