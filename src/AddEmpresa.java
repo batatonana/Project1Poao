@@ -755,7 +755,7 @@ public class AddEmpresa extends JFrame {
                                 break;
                             case "frutaria":
                                 empresa = new Frutaria(nome.getText(), Double.parseDouble(lat.getText()),
-                                            Double.parseDouble(lon.getText()), dist.getText(), Double.parseDouble(nomeMerc1.getText()), Integer.parseInt(nomeFrut1.getText()), Double.parseDouble(nomeFrut2.getName()));
+                                            Double.parseDouble(lon.getText()), dist.getText(), Double.parseDouble(nomeMerc1.getText()), Integer.parseInt(nomeFrut1.getText()), Double.parseDouble(nomeFrut2.getText()));
                                 break;
                             case "mercado":
                                 empresa = new Mercado(nome.getText(), Double.parseDouble(lat.getText()),
