@@ -7,13 +7,13 @@ public class Frutaria extends Mercearia{
     private double faturacaoProduto;
     /**
      * Constructor for the class {@link #Frutaria}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param custoLimpeza
-     * @param produtos
-     * @param faturacaoProduto
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param custoLimpeza the custo limpeza
+     * @param produtos the produtos
+     * @param faturacaoProduto the faturacao produtos
      */
     public Frutaria(String name, double latitude, double longitude, String distrito, double custoLimpeza, int produtos, double faturacaoProduto){
         super(name, latitude, longitude, distrito, custoLimpeza);
@@ -52,7 +52,7 @@ public class Frutaria extends Mercearia{
 
     /**
      * Setter for the average faturation per products sold
-     * @param faturacaoProduto
+     * @param faturacaoProduto the faturacao produtos
      */
     public void setFaturacaoProduto(double faturacaoProduto) {
         if (faturacaoProduto < 0){
@@ -63,7 +63,7 @@ public class Frutaria extends Mercearia{
     }
     /**
      * Setter for the average number of products sold per year
-     * @param produtos
+     * @param produtos the produtos
      */
     public void setProdutos(int produtos) {
         if(produtos < 0){

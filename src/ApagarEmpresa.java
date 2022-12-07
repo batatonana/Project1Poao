@@ -25,6 +25,10 @@ public class ApagarEmpresa extends JFrame {
     private JLabel labels[];
     private JTextField textFields[];
 
+    /**
+     * Class constructor to edit and delete empresas
+     * @param manager
+     */
     public ApagarEmpresa(StarThrive manager) {
         this.manager = manager;
 

@@ -8,14 +8,14 @@ public class Mercado extends Mercearia{
     private double faturacaoArea;
     /**
      * Constructor for the class {@link #Mercado}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param custoLimpeza
-     * @param type
-     * @param area
-     * @param faturacaoArea
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param custoLimpeza the custo limpeza
+     * @param type the type of mercado
+     * @param area the area of empresa
+     * @param faturacaoArea the faturacao por area 
      */
     public Mercado(String name, double latitude, double longitude, String distrito, double custoLimpeza, String type, double area, double faturacaoArea){
         super(name, latitude, longitude, distrito, custoLimpeza);
@@ -56,7 +56,7 @@ public class Mercado extends Mercearia{
 
     /**
      * Setter for the type of market
-     * @param type
+     * @param type the type of mercado
      */
     public void setType(String type) {
         if(type.equals("Mini") || type.equals("Super") || type.equals("Hiper")){
@@ -67,7 +67,7 @@ public class Mercado extends Mercearia{
     }
     /**
      * Setter for the area
-     * @param area
+     * @param area the area of empresa
      */
     public void setArea(double area) {
         if(area < 0){
@@ -78,7 +78,7 @@ public class Mercado extends Mercearia{
     }
     /**
      * Setter for the average faturation for meter squared
-     * @param faturacaoArea
+     * @param faturacaoArea the faturacao por area 
      */
     public void setFaturacaoArea(double faturacaoArea) {
         if(faturacaoArea < 0){

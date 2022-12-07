@@ -7,11 +7,11 @@ public abstract class Mercearia extends Empresa {
 
     /**
      * Constructor for the class {@link #Mercearia}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param custoLimpeza
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param custoLimpeza the custo limpeza
      */
     public Mercearia(String name, double latitude, double longitude, String distrito, double custoLimpeza){
         super(name, latitude, longitude, distrito);
@@ -37,7 +37,7 @@ public abstract class Mercearia extends Empresa {
 
     /**
      * Setter for the custo de limpeza
-     * @param custoLimpeza
+     * @param custoLimpeza the custo limpeza
      */
     public void setCustoLimpeza(double custoLimpeza) {
         if(custoLimpeza < 0){

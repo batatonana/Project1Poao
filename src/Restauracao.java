@@ -7,6 +7,16 @@ public abstract class Restauracao extends Empresa {
     protected double clientesMedioDiario;
     protected double salarioMedioAnual;
 
+    /**
+     * Constructor for {@link #Restauracao}
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param empregados the number of empregados
+     * @param salarioMedioAnual the values of salario medio anual
+     * @param clientesMedioDiario the number of clientes medio diario
+     */
     public Restauracao(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario){
         super(name, latitude, longitude, distrito);
         setClientesMedioDiario(clientesMedioDiario);
@@ -33,7 +43,10 @@ public abstract class Restauracao extends Empresa {
         if(getValid()) return 0;
         return -1;
     }
-
+    /**
+     * Setter for the number salarioMedioAnual
+     * @param salarioMedioAnual the values of salario medio anual
+     */
     public void setSalarioMedioAnual(double salarioMedioAnual) {
         if(salarioMedioAnual < 0){
             super.setValid(false);
@@ -41,6 +54,10 @@ public abstract class Restauracao extends Empresa {
             this.salarioMedioAnual = salarioMedioAnual;
         }
     }
+     /**
+     * Setter for the number empregados
+     * @param empregados the number of empregados
+     */
     public void setEmpregados(int empregados) {
         if(empregados < 0){
             super.setValid(false);
@@ -48,6 +65,10 @@ public abstract class Restauracao extends Empresa {
             this.empregados = empregados;
         }
     }
+    /**
+     * Setter for the number clientesMedioDiario
+     * @param clientesMedioDiario the number of clientes medio diario
+     */
     public void setClientesMedioDiario(double clientesMedioDiario) {
         if(clientesMedioDiario < 0){
             super.setValid(false);
@@ -57,13 +78,24 @@ public abstract class Restauracao extends Empresa {
     }
 
 
-
+    /**
+     * Getter for the number clientesMedioDiario
+     * @return clientesMedioDiario
+     */
     public double getClientesMedioDiario() {
         return clientesMedioDiario;
     }
+    /**
+     * Getter for the number salarioMedioAnual
+     * @return salarioMedioAnual
+     */
     public double getSalarioMedioAnual() {
         return salarioMedioAnual;
     }
+    /**
+     * Getter for the number empregados
+     * @return empregados
+     */
     public int getEmpregados() {
         return empregados;
     }

@@ -14,10 +14,10 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Class constructor
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
      */
     public Empresa(String name, double latitude, double longitude, String distrito){
         setName(name);
@@ -91,7 +91,7 @@ public abstract class Empresa implements Serializable {
 
     /**
      * Setter for the name accepts any name greaetd than 1
-     * @param name
+     * @param name the name of empresa
      */
     public void setName(String name) {
         if(name != null && name.length()>1){
@@ -103,8 +103,8 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Creates an instance of the class coordenadas is the params are valid
-     * @param latitude
-     * @param longitude
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
      */
     public void setCoordenadas(double latitude, double longitude) {
         Coordenadas coordenadasAux = new Coordenadas(latitude, longitude);
@@ -117,7 +117,7 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Setter for distrito, accepts any name started with uppercase
-     * @param distrito
+     * @param distrito the distrito of empresa
      */
     public void setDistrito(String distrito) {
         if(distrito.charAt(0)>= 'Z' || distrito.charAt(0) <= 'A'){
@@ -152,7 +152,7 @@ public abstract class Empresa implements Serializable {
     
     /**
      * Getter for name
-     * @return name
+     * @return name the name of empresa
      */
     public String getName() {
         return name;

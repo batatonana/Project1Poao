@@ -8,15 +8,15 @@ public class Pastelaria extends Restauracao{
 
     /**
      * Constructor for the class {@link #Pastelaria}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param empregados
-     * @param salarioMedioAnual
-     * @param clientesMedioDiario
-     * @param cafeVendidoDia
-     * @param faturacaoAnualBolo
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param empregados the number of empregados
+     * @param salarioMedioAnual the values of salario medio anual
+     * @param clientesMedioDiario the number of clientes medio diario
+     * @param cafeVendidoDia the number of bolos vendidos por dia
+     * @param faturacaoAnualBolo the faturacao anual por bolo
      */
     public Pastelaria(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario, double cafeVendidoDia, double faturacaoAnualBolo){
         super(name, latitude, longitude, distrito, empregados, salarioMedioAnual, clientesMedioDiario);
@@ -56,7 +56,7 @@ catch(Exception e){
 
     /**
      * Setter for the anual faturation per cake sold per day
-     * @param faturacaoAnualBolo
+     * @param faturacaoAnualBolo the faturacao anual por bolo
      */
     public void setFaturacaoAnualBolo(double faturacaoAnualBolo) {
         if(faturacaoAnualBolo < 0){
@@ -68,7 +68,7 @@ catch(Exception e){
     
     /**
      * Setter for the average of cakes sold per day
-     * @param boloVendidoDia
+     * @param boloVendidoDia he number of bolos vendidos por dia
      */
     public void setBoloVendidoDia(double boloVendidoDia) {
         if(boloVendidoDia < 0){

@@ -23,7 +23,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Method that returns the empresa in a specific index
-     * @param index
+     * @param index 
      * @return empresa in the index
      */
     public Empresa get(int index){
@@ -32,7 +32,7 @@ public class StarThrive implements Serializable{
 
     /**
      * Method that deletes the empresa in a specifici index
-     * @param index
+     * @param index 
      * @return 0 if succesfull, -1 if not
      */
     public int delete(int index){
@@ -251,6 +251,10 @@ public class StarThrive implements Serializable{
         }
     }
     
+    /**
+     * Function main to run program
+     * @param args
+     */
     public static void main(String[] args) {
         StarThrive manager = new StarThrive();
         new LoadMain(manager);

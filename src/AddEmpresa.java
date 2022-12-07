@@ -5,7 +5,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
-
+/**
+ * Class os the GUI to add empresas
+ */
 public class AddEmpresa extends JFrame {
 
     private Empresa empresa;
@@ -31,7 +33,11 @@ public class AddEmpresa extends JFrame {
     private Color bgColor = new Color(100, 100, 150);
 
     private StarThrive manager;
-
+    /**
+     * Class constructor to add empresas
+     * @param manager
+     * @param empresa
+     */
     public AddEmpresa(StarThrive manager, Empresa empresa) {
         this.manager = manager;
         this.empresa = empresa;
@@ -49,7 +55,10 @@ public class AddEmpresa extends JFrame {
         frame.setVisible(true);
 
     }
-
+    /**
+     * Draw add empresas panel
+     * @return panel
+     */
     public JPanel drawPanel() {
 
         JLabel labelName = new JLabel("Adiciona empresa");

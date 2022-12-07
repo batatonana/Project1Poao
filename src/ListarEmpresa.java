@@ -23,7 +23,10 @@ public class ListarEmpresa extends JFrame {
 
     // Creating a StarTrhrive object
     private StarThrive manager;
-
+    /**
+     * Class constructor to list empresas
+     * @param manager
+     */
     public ListarEmpresa(StarThrive manager) {
         this.manager = manager;
         // Set frame Dimensions
@@ -65,6 +68,7 @@ public class ListarEmpresa extends JFrame {
         // Frame Visible = true
         frame.setVisible(true);
     }
+    
     private void listarTodos() {
         // Data
         String[][] data = manager.data();
@@ -93,6 +97,7 @@ public class ListarEmpresa extends JFrame {
         frame.validate();
         frame.repaint();
     }
+    
     private void listarLucro() {
         String[][] data = manager.stats(0);
         String[] columnNames = { "Nome", "Tipo", "Lucro Anual" };

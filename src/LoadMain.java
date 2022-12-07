@@ -18,6 +18,10 @@ public class LoadMain extends JFrame{
     private Empresa empresa;
     private StarThrive manager;
 
+    /**
+     * Class constructor to LoadMain
+     * @param manager 
+     */
     public LoadMain(StarThrive manager) {
         this.manager = manager;
 
@@ -35,7 +39,6 @@ public class LoadMain extends JFrame{
         frame.add(panelA);
         frame.setVisible(true);
     }
-
 
     private JPanel drawPanelMenu() {
 

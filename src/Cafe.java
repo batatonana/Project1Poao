@@ -8,15 +8,15 @@ public class Cafe extends Restauracao {
 
     /**
      * Constructor for Cafe class
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param empregados
-     * @param salarioMedioAnual
-     * @param clientesMedioDiario
-     * @param cafeVendidoDia
-     * @param faturacaoAnualCafe
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param empregados the number of empregados
+     * @param salarioMedioAnual the values of salario medio anual
+     * @param clientesMedioDiario the number of clientes medio diario
+     * @param cafeVendidoDia the number of cafes vendidos por dia
+     * @param faturacaoAnualCafe the faturacao anual por cafe
      */
     public Cafe(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario, double cafeVendidoDia, double faturacaoAnualCafe){
         super(name, latitude, longitude, distrito, empregados, salarioMedioAnual, clientesMedioDiario);
@@ -58,7 +58,7 @@ public class Cafe extends Restauracao {
     
     /** 
      * Setter for the average amount of coffe sold in a day
-     * @param cafeVendidoDia
+     * @param cafeVendidoDia the number of cafes vendidos por dia
      */
     public void setCafeVendidoDia(double cafeVendidoDia) {
         if(cafeVendidoDia < 0){
@@ -70,7 +70,7 @@ public class Cafe extends Restauracao {
     
     /** 
      * Setter for the Anual faturation per cofe per day
-     * @param faturacaoAnualCafe
+     * @param faturacaoAnualCafe the faturacao anual por cafe
      */
     public void setFaturacaoAnualCafe(double faturacaoAnualCafe) {
         if(faturacaoAnualCafe < 0){

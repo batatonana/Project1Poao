@@ -8,18 +8,18 @@ public class Local extends Restaurante{
 
     /**
      * Cosntructor for the class {@link #Local}
-     * @param name
-     * @param latitude
-     * @param longitude
-     * @param distrito
-     * @param empregados
-     * @param salarioMedioAnual
-     * @param clientesMedioDiario
-     * @param diasEmFuncionamento
-     * @param mesasInt
-     * @param faturacaoMesa
-     * @param mesasEsp
-     * @param licencaEsp
+     * @param name the name of empresa
+     * @param latitude the latitude of empresa
+     * @param longitude the longitude of empresa
+     * @param distrito the distrito of empresa
+     * @param empregados the number of empregados
+     * @param salarioMedioAnual the values of salario medio anual
+     * @param clientesMedioDiario the number of clientes medio diario
+     * @param diasEmFuncionamento the dias de funcionamento
+     * @param mesasInt the number of mesas
+     * @param faturacaoMesa the values of faturacao por mesa
+     * @param mesasEsp the number of mesas esplanada
+     * @param licencaEsp the values of licensa esplanada
      */
     public Local(String name, double latitude, double longitude, String distrito, int empregados, double salarioMedioAnual, double clientesMedioDiario, int diasEmFuncionamento, int mesasInt, double faturacaoMesa, int mesasEsp, double licencaEsp){
         super(name, latitude, longitude, distrito, empregados, salarioMedioAnual, clientesMedioDiario, diasEmFuncionamento, mesasInt, faturacaoMesa);
@@ -63,7 +63,7 @@ public class Local extends Restaurante{
 
     /**
      * Setter for the number of outside tables
-     * @param mesasEsp
+     * @param mesasEsp the number of mesas espalanda
      */
     public void setMesasEsp(int mesasEsp) {
         if(mesasEsp < 0){
@@ -75,6 +75,7 @@ public class Local extends Restaurante{
     
     /**
      * Setter for the price of licence per outside table
+     * @param licencaEsp the values of licensa esplanada
      */
     public void setLicencaEsp(double licencaEsp) {
         if(licencaEsp < 0){
@@ -85,14 +86,14 @@ public class Local extends Restaurante{
     }
 
     /**
-     * Setter for the price of licence per outside table
+     * Getter for the price of licence per outside table
      * @return price of licence per outside table
      */
     public double getLicencaEsp() {
         return licencaEsp;
     }
     /**
-     * Setter for the number of outside tables
+     * Getter for the number of outside tables
      * @return number of outside tables
      */
     public int getMesasEsp() {
