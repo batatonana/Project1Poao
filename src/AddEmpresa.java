@@ -55,13 +55,12 @@ public class AddEmpresa extends JFrame {
      * Labels Restaurantes
      */
     private JLabel labelRest1, labelRest2, labelRest3, labelDrive1, labelDrive2, labelLocal1, labelLocal2;
-    private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4;
     private JLabel labelFrut1, labelFrut2;
 
     /**
      * Labels Merceria
      */
-    private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4, labelMerc5;
+    private JLabel labelMerc1, labelMerc2, labelMerc3, labelMerc4;
     /**
      * RadioButton options
      */
